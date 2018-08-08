@@ -4,6 +4,7 @@
 git clone git@github.com:Steemhunt/token-website.git
 cd token-website
 bundle install
+rails db:create db:migrate
 rails s
 ```
 
