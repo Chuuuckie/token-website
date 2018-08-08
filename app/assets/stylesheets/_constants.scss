@@ -1,0 +1,47 @@
+$primary: #fc6f6f;
+$text_grey: #aaa;
+$text_dark: #707070;
+$light_grey: #ddd;
+$disabled_grey: #aaa;
+$green: #52c41a;
+$red: #f5222d;
+
+html, body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Comfortaa', cursive;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 20px;
+}
+
+h2 {
+  font-size: 18px;
+}
+
+h3, h5, h6 {
+  font-size: 16px;
+}
+
+button, .thin {
+  font-weight: 300;
+}
+
+.primary-color {
+  color: $primary;
+}
+
+.grey-color {
+  color: $text_grey;
+}
+
+.white-color {
+  color: white;
+}

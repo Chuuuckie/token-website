@@ -1,0 +1,106 @@
+<div class="landing-container" id="landing">
+  <div class="contents-container">
+    <div class="contents-box">
+      <%= image_tag("logo_top@2x.png", class: 'logo-top') %>
+      <h1 class="logo-text">HUNT</h1>
+      <h1 class="contents-title">Power of Product Influencers</h1>
+      <p class="contents-text">
+        <span class="primary-color"><%= decify @products_count %></span> cool products, <span class="primary-color"><%= dollar @products_value %></span> hunter rewards generated over <span class="primary-color"><%= decify @products_days %></span> days on top of Steem Blockchain
+      </p>
+      <a href="#" class="primary-button">LEARN MORE</a>
+    </div>
+  </div>
+  <div class="thumbnail-container">
+    <% @posts.to_a.reject {|post| post.thumbnail =~ /.*\.gif$/ }.each do |post| %>
+      <div class="thumbnail">
+        <%= image_tag(post.thumbnail) %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="main-container">
+  <%= render partial: 'home/scroll_spy' %>
+  <div class="main-row flex-row section" id="hunt-platform">
+    <div class="main-col-text">
+      <h1 class="primary-color">What is HUNT Platform?</h1>
+      <p class="grey-color">HUNT is an incentivising community platform on top of Steem Blockchain for product influencers who have exceptional knowledge and passions for cool new products.
+  It’s a bridging platform for makers to reach out to the product early adopters for the success of their product launching.</p>
+      <a href="#" class="more-link">Learn more</a>
+    </div>
+    <div class="main-col-image">
+      <%= image_tag("img_building_token@3x") %>
+    </div>
+  </div>
+
+  <div class="main-row flex-row section" id="portfolio">
+    <div class="main-col-image">
+      <%= image_tag("img-hunt-economy@3x") %>
+    </div>
+    <div class="main-col-text">
+      <h1 class="primary-color">HUNT Platform Portfolio</h1>
+      <p class="grey-color">The goal of HUNT platform is to create a decentralised ecosystem by providing three blockchain-based HUNT token rewards platform on top of Smart Media Token system.</p>
+      <div class="hunt-bar">
+        <%= image_tag("logo_top@2x.png") %>
+        <p class="grey-color"><span class="primary-color">Steemhunt</span> a community where hunters introduce cool new products</p>
+      </div>
+      <div class="hunt-bar">
+        <%= image_tag("logo_top@2x.png") %>
+        <p class="grey-color"><span class="primary-color">Reviewhunt</span> a marketing channel where makers suggest bounty missions for hunters</p>
+      </div>
+      <div class="hunt-bar">
+        <%= image_tag("logo_top@2x.png") %>
+        <p class="grey-color"><span class="primary-color">Ideawhunt</span> a Kickstarter-like platform where makers run crowdfunding campaigns</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-row section" id="steemhunt">
+    <h2 class="primary-color">Steemhunt</h2>
+    <h1 class="white-color">Daily Ranking for Effortlessly Cool Products That Rewards Hunters</h1>
+    <p class="grey-color">
+      Steemhunt is a community for geeks, alpha nerds, and product enthusiasts who love to dig out new products and talk about them with others. We call them as “Product Hunters.” To keep them motivated and maintain the community as ad-free playground, we adopted Steem blockchain to reward them by cryptocurrency for their dedicated activities.
+    </p>
+    <p class="grey-color">
+      Hunted products &amp; Approx. USD rewards paid since March 2018: <br>
+      <span class="white-color"><%= decify @products_count %> products, <%= dollar @products_value %> rewards</span>
+    </p>
+    <a href="https://steemhunt.com" target="_blank" class="more-link">See the live product</a>
+    <%= image_tag("img_sh_mockup@2x.png", class: "full-width") %>
+  </div>
+
+  <div class="main-row section" id="reviewhunt">
+    <h2 class="primary-color">Reviewhunt</h2>
+    <h1 class="white-color">Post Bounties for Product Influencers to Unleash your Launching Hypes</h1>
+    <p class="grey-color">
+      Makers/companies spend enormous amount of time/efforts to raise attentions from product early-adoptors because their word of mouth impact is far higher than normal people. Via Reviewhunt, It will never be easier for makers to attract the early-adoptors by posting bounties to boost their early-stage product cycle.
+    </p>
+    <%= image_tag("reviewhunt@2x.png", class: "full-width") %>
+  </div>
+
+  <div class="main-row section" id="ideahunt">
+    <h2 class="primary-color">Ideahunt</h2>
+    <h1 class="white-color">Powerful Product Geeks Now in Crowdfunding Market</h1>
+    <p class="grey-color">
+      The biggest problem for makers to run crowdfunding is that it is very limited to reach out to the right targets. Many projects on the major crowdfunding platforms need to heavily advertise them to other media channels too. The Ideahunt, backed by the product enthusiasts from Steemhunt, can provide hassle-free and perfectly target-centered crowdfunding platform. The hunters will constantly look for an innovative products to purchase by using their HUNT tokens. You will be free from all the pressures that you have to advertise your project.
+    </p>
+    <%= image_tag("ideahunt@2x.png", class: "full-width") %>
+  </div>
+
+  <div class="main-row section" id="whitepaper">
+
+  </div>
+
+  <div class="main-row section" id="token-distribution">
+
+  </div>
+
+  <div class="main-row section" id="roadmap">
+
+  </div>
+
+  <div class="main-row section" id="team">
+
+  </div>
+
+</div>

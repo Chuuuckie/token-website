@@ -1,0 +1,237 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "./constants";
+@import "./mixins";
+
+a.primary-button {
+  width: 150px;
+  height: 40px;
+  border-radius: 20px;
+  font-size: 15px;
+  color: $primary;
+  border: solid 0.5px $primary;
+  background: transparent;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+a.more-link {
+  text-decoration: none;
+  color: $primary;
+}
+
+img.full-width {
+  width: 100%;
+  margin: 40px 0px;
+  @include responsive(tablet) {
+    margin: 20px 0px;
+  }
+}
+
+.mobile-hide {
+  @include responsive(tablet) {
+    display: none;
+  }
+}
+
+.hunt-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  min-height: 50px;
+  align-items: center;
+  img {
+    margin-right: 20px;
+    height: 40px;
+  }
+  p {
+    margin: 6px 0px;
+  }
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-center-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.landing-container {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-image: radial-gradient(circle at 50% 49%, white, rgba(239, 236, 234, 0.4));
+  .contents-container {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .contents-box {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 35vw;
+      @include responsive(ipadpro) {
+        width: 45vw;
+      }
+      @include responsive(tablet) {
+        width: 60vw;
+      }
+      @include responsive(mobile) {
+        width: 70vw;
+      }
+      img.logo-top {
+        width: 35px;
+        height: 54px;
+        object-fit: contain;
+      }
+      h1.logo-text {
+        font-size: 20px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: 2.5px;
+        text-align: center;
+        color: $primary;
+      }
+      h1.contents-title {
+        font-size: 20px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: 2.5px;
+        text-align: center;
+        color: #4a4a4a;
+        margin: 40px 0px 0px 0px;
+      }
+      p.contents-text {
+        text-align: center;
+        font-family: OpenSans;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: center;
+        color: rgba(0, 0, 0, 0.65);
+      }
+    }
+  }
+  .thumbnail-container {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: -1;
+    .thumbnail {
+      width: calc(calc(100vw / 14) - 2px);
+      height: calc(calc(100vw / 14) - 2px);
+      @include responsive(ipadpro) {
+        width: calc(calc(100vw / 12) - 2px);
+        height: calc(calc(100vw / 12) - 2px);
+      }
+      @include responsive(tablet) {
+        width: calc(calc(100vw / 10) - 2px);
+        height: calc(calc(100vw / 10) - 2px);
+      }
+      @include responsive(mobile) {
+        width: calc(calc(100vw / 8) - 2px);
+        height: calc(calc(100vw / 8) - 2px);
+      }
+      border: solid 1px #ffffff;
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+.main-container {
+  background-color: black;
+  color: $text_grey;
+  padding: 0px 200px;
+  @include responsive(tablet) {
+    padding: 0px;
+  }
+  .main-row {
+    padding: 50px 20px;
+    @include responsive(tablet) {
+      flex-direction: column;
+    }
+    .main-col-text {
+      width: 60%;
+      @include responsive(tablet) {
+        width: 100%;
+      }
+    }
+    .main-col-image {
+      width: 40%;
+      @include responsive(tablet) {
+        width: 100%;
+      }
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: 80%;
+      }
+    }
+  }
+  .spy-left {
+    position: absolute;
+    top: calc(100vh + 40px);
+    left: 40px;
+    img.logo-spy {
+      height: 50px;
+    }
+    ul {
+      display: block;
+      list-style:none;
+      padding: 0;
+      margin: 0;
+      li {
+        line-height: 30.5px;
+        font-size: 12.2px;
+        color: hsla(0,0%,100%,.8);
+        letter-spacing: .3294px;
+        font-weight: lighter;
+        -webkit-transition: all .17s ease-in;
+        -o-transition: .17s ease-in all;
+        transition: all .17s ease-in;
+        cursor: pointer;
+        a {
+          color: $text_dark;
+          text-decoration: none;
+        }
+        a.active {
+          color: $primary;
+        }
+      }
+    }
+  }
+
+  .spy-right {
+    position: absolute;
+    top: calc(100vh + 40px);
+    right: 40px;
+  }
+
+  .spy-fixed {
+    position: fixed !important;
+    top: 40px !important;
+  }
+}
