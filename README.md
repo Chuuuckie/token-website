@@ -1,24 +1,10 @@
-# README
+## Steemhunt Token Webstie
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+```bash
+git clone git@github.com:Steemhunt/token-website.git
+cd token-website
+bundle install
+rails s
+```
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+browse => localhost:3000
