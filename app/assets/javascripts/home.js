@@ -68,9 +68,9 @@
       document.querySelector('.mobile-menu-container').setAttribute('class', 'mobile-menu-container mobile-menu-container-fixed');
       if (typeof beforeScroll !== 'undefined' && document.querySelector('#landing').offsetHeight + 500 < scrollPosition) {
         if (beforeScroll > scrollPosition){
-          document.querySelector('.mobile-menu-container').style.top = "0px";
+          document.querySelector('.mobile-menu-container').style.opacity = "1";
         } else {
-          document.querySelector('.mobile-menu-container').style.top = "-50px";
+          document.querySelector('.mobile-menu-container').style.opacity = "0";
         }
       } else {
         document.querySelector('.mobile-menu-container').style.top = "0px";

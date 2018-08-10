@@ -350,13 +350,20 @@ a.close-button {
 }
 
 .mobile-menu-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
   position: absolute;
   top: 100vh;
-  width: 100vw;
+  width: calc(100vw - 20px);
   height: 50px;
-  background: yellow;
+  background: rgba(0, 0, 0, 0.65);
+  opacity: 1;
+  transition-property: opacity;
+  transition-duration: 0.5s;
   a.menu-button {
-
+    padding: 5px 5px 5px 0px;
     img {
       height: 30px;
     }
