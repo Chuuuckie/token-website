@@ -5,28 +5,48 @@
       <h1 class="logo-text">HUNT</h1>
       <h1 class="contents-title">Power of Product Influencers</h1>
       <p class="contents-text">
-        <span class="primary-color"><%= decify @products_count %></span> cool products, <span class="primary-color"><%= dollar @products_value %></span> hunter rewards generated over <span class="primary-color"><%= decify @products_days %></span> days on top of Steem Blockchain
+        <span class="primary-color"><%= decify @stats[:count] %></span> cool products, <span class="primary-color"><%= dollar @stats[:value] %></span> hunter rewards generated over <span class="primary-color"><%= decify @products_days %></span> days on top of Steem Blockchain
       </p>
       <a href="#" class="primary-button">LEARN MORE</a>
     </div>
   </div>
   <div class="thumbnail-container">
-    <% @posts.to_a.reject {|post| post.thumbnail =~ /.*\.gif$/ }.each do |post| %>
+    <% @thumbnails.each do |thumbnail| %>
       <div class="thumbnail">
-        <%= image_tag(post.thumbnail) %>
+        <%= image_tag(thumbnail) %>
       </div>
     <% end %>
   </div>
 </div>
 
 <div class="main-container">
-  <%= render partial: 'home/scroll_spy' %>
+  <div class="mobile-hide">
+    <div class="spy-left">
+      <%= render partial: 'home/menu_links' %>
+    </div>
+    <div class="spy-right">
+      <a href="https://steemhunt.com" target="_blank" class="primary-button">LIVE PRODUCT</a>
+    </div>
+  </div>
+  <div class="mobile-only">
+    <%= render partial: 'home/side_nav' %>
+  </div>
+
+  <div class="mobile-menu-container">
+    <a id="openNav" href="javascript:void(0)" class="menu-button">
+      <%= image_tag("icon-menu.svg") %>
+    </a>
+    <div class="mobile-spy-right">
+      <a href="https://steemhunt.com" target="_blank" class="primary-button">LIVE PRODUCT</a>
+    </div>
+  </div>
+
   <div class="main-row flex-row section" id="hunt-platform">
     <div class="main-col-text">
       <h1 class="primary-color">What is HUNT Platform?</h1>
       <p class="grey-color">HUNT is an incentivising community platform on top of Steem Blockchain for product influencers who have exceptional knowledge and passions for cool new products.
   It’s a bridging platform for makers to reach out to the product early adopters for the success of their product launching.</p>
-      <a href="#" class="more-link">Learn more</a>
+      <a href="#" class="more-link">Learn more <%= image_tag("icon-arrow-right.svg", class: "svg-icon-p") %></a>
     </div>
     <div class="main-col-image">
       <%= image_tag("img_building_token@3x") %>
@@ -41,31 +61,31 @@
       <h1 class="primary-color">HUNT Platform Portfolio</h1>
       <p class="grey-color">The goal of HUNT platform is to create a decentralised ecosystem by providing three blockchain-based HUNT token rewards platform on top of Smart Media Token system.</p>
       <div class="hunt-bar">
-        <%= image_tag("logo_top@2x.png") %>
+        <%= image_tag("logo_sh@2x.png") %>
         <p class="grey-color"><span class="primary-color">Steemhunt</span> a community where hunters introduce cool new products</p>
       </div>
       <div class="hunt-bar">
-        <%= image_tag("logo_top@2x.png") %>
+        <%= image_tag("logo_rh@2x.png") %>
         <p class="grey-color"><span class="primary-color">Reviewhunt</span> a marketing channel where makers suggest bounty missions for hunters</p>
       </div>
       <div class="hunt-bar">
-        <%= image_tag("logo_top@2x.png") %>
+        <%= image_tag("logo_ih@2x.png") %>
         <p class="grey-color"><span class="primary-color">Ideawhunt</span> a Kickstarter-like platform where makers run crowdfunding campaigns</p>
       </div>
     </div>
   </div>
 
   <div class="main-row section" id="steemhunt">
-    <h2 class="primary-color">Steemhunt</h2>
+    <h2 class="primary-color">Steemhunt <span class="icon-text-box">LIVE</span> </h2>
     <h1 class="white-color">Daily Ranking for Effortlessly Cool Products That Rewards Hunters</h1>
     <p class="grey-color">
       Steemhunt is a community for geeks, alpha nerds, and product enthusiasts who love to dig out new products and talk about them with others. We call them as “Product Hunters.” To keep them motivated and maintain the community as ad-free playground, we adopted Steem blockchain to reward them by cryptocurrency for their dedicated activities.
     </p>
     <p class="grey-color">
       Hunted products &amp; Approx. USD rewards paid since March 2018: <br>
-      <span class="white-color"><%= decify @products_count %> products, <%= dollar @products_value %> rewards</span>
+      <span class="white-color"><%= decify @stats[:count] %> products, <%= dollar @stats[:value] %> rewards</span>
     </p>
-    <a href="https://steemhunt.com" target="_blank" class="more-link">See the live product</a>
+    <a href="https://steemhunt.com" target="_blank" class="more-link">See the live product <%= image_tag("icon-arrow-right.svg", class: "svg-icon-p") %></a>
     <%= image_tag("img_sh_mockup@2x.png", class: "full-width") %>
   </div>
 

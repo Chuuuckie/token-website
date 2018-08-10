@@ -10,17 +10,26 @@ a.primary-button {
   border-radius: 20px;
   font-size: 15px;
   color: $primary;
-  border: solid 0.5px $primary;
+  border: solid 1px $primary;
   background: transparent;
   text-decoration: none;
   display: flex;
   align-items: center;
   justify-content: center;
+  @include responsive(tablet) {
+    width: 80px;
+    height: 25px;
+    border-radius: 12.5px;
+    font-size: 10px;
+  }
 }
 
 a.more-link {
   text-decoration: none;
   color: $primary;
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 img.full-width {
@@ -31,9 +40,30 @@ img.full-width {
   }
 }
 
+img.svg-icon-p {
+  height: 16px;
+  margin-top: 2px;
+  margin-left: 2px;
+}
+
+span.icon-text-box {
+  border: 1px solid $primary;
+  border-radius: 4px;
+  font-size: 10px;
+  padding: 2px 4px;
+  vertical-align: middle;
+}
+
 .mobile-hide {
   @include responsive(tablet) {
     display: none;
+  }
+}
+
+.mobile-only {
+  display: none;
+  @include responsive(tablet) {
+    display: block;
   }
 }
 
@@ -61,6 +91,14 @@ img.full-width {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.display-none {
+  display: none;
+}
+
+.display-block {
+  display: block;
 }
 
 .landing-container {
@@ -119,7 +157,6 @@ img.full-width {
       }
       p.contents-text {
         text-align: center;
-        font-family: OpenSans;
         font-weight: normal;
         font-style: normal;
         font-stretch: normal;
@@ -136,19 +173,19 @@ img.full-width {
     position: relative;
     z-index: -1;
     .thumbnail {
-      width: calc(calc(100vw / 14) - 2px);
-      height: calc(calc(100vw / 14) - 2px);
+      width: calc(calc(100vw / 11) - 2px);
+      height: calc(calc(100vw / 11) - 2px);
       @include responsive(ipadpro) {
-        width: calc(calc(100vw / 12) - 2px);
-        height: calc(calc(100vw / 12) - 2px);
+        width: calc(calc(100vw / 9) - 2px);
+        height: calc(calc(100vw / 9) - 2px);
       }
       @include responsive(tablet) {
-        width: calc(calc(100vw / 10) - 2px);
-        height: calc(calc(100vw / 10) - 2px);
+        width: calc(calc(100vw / 7) - 2px);
+        height: calc(calc(100vw / 7) - 2px);
       }
       @include responsive(mobile) {
-        width: calc(calc(100vw / 8) - 2px);
-        height: calc(calc(100vw / 8) - 2px);
+        width: calc(calc(100vw / 5) - 2px);
+        height: calc(calc(100vw / 5) - 2px);
       }
       border: solid 1px #ffffff;
       img {
@@ -171,6 +208,7 @@ img.full-width {
     padding: 50px 20px;
     @include responsive(tablet) {
       flex-direction: column;
+      margin: 0px 20px;
     }
     .main-col-text {
       width: 60%;
@@ -195,7 +233,7 @@ img.full-width {
     position: absolute;
     top: calc(100vh + 40px);
     left: 40px;
-    img.logo-spy {
+    img.logo-menu {
       height: 50px;
     }
     ul {
@@ -234,4 +272,110 @@ img.full-width {
     position: fixed !important;
     top: 40px !important;
   }
+}
+
+.sidenav-background {
+  display: none;
+  height: 100%;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 199;
+  transition: 0.2s ease-in-out;
+  -webkit-transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
+  -ms-transition: 0.2s ease-in-out;
+}
+.sidenav {
+  background-color: #000;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  height: 100%;
+  left: -100vw;
+  margin-left: 0px;
+  outline: none;
+  position: fixed;
+  top: 0;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  -ms-transition: 0.5s;
+  width: 100vw;
+  z-index: 200;
+  .sidenav-body {
+    padding: 0 0 80px 40px;
+    img.logo-menu {
+      height: 50px;
+    }
+    ul {
+      display: block;
+      list-style:none;
+      padding: 0;
+      margin: 0;
+      li {
+        line-height: 30.5px;
+        font-size: 12.2px;
+        color: hsla(0,0%,100%,.8);
+        letter-spacing: .3294px;
+        font-weight: lighter;
+        -webkit-transition: all .17s ease-in;
+        -o-transition: .17s ease-in all;
+        transition: all .17s ease-in;
+        cursor: pointer;
+        a {
+          color: $text_dark;
+          text-decoration: none;
+        }
+        a.active {
+          color: $primary;
+        }
+      }
+    }
+  }
+}
+
+a.close-button {
+  position: absolute;
+  top: -40px;
+  margin-top: 50px;
+  right: 10px;
+  padding: 0 0 20px 20px;
+  img {
+    height: 30px;
+  }
+}
+
+.mobile-menu-container {
+  position: absolute;
+  top: 100vh;
+  width: 100vw;
+  height: 50px;
+  background: yellow;
+  a.menu-button {
+
+    img {
+      height: 30px;
+    }
+  }
+  a.menu-button-fixed {
+
+  }
+  .mobile-spy-right {
+    @include responsive(tablet) {
+
+    }
+  }
+  .mobile-spy-fixed {
+    @include responsive(tablet) {
+
+    }
+  }
+}
+
+.mobile-menu-container-fixed {
+  position: fixed !important;
 }
