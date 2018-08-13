@@ -1,0 +1,12 @@
+<% name, role = person[:name], person[:role] %>
+<% steemit, image_url = person[:steemit], person[:steemit] ? "https://steemitimages.com/u/#{person[:steemit]}/avatar" : Post::DEFAULT_IMAGE %>
+<div class="person-container">
+  <%= image_tag(image_url, class: "profile-avatar", onerror: "this.error=null;this.src='#{Post::DEFAULT_IMAGE}'") %>
+  <div class="person-info-container">
+    <span class="primary-color profile-name"><%= name %></span>
+      <% if steemit %>
+        <a href="https://steemit.com/@<%= steemit %>" target="_blank"><%= image_tag("icon-steemit.svg", class: "svg-icon-p") %></a>
+      <% end %> <br>
+    <span class="grey-color profile-role"><%= role %></span> <br>
+  </div>
+</div>

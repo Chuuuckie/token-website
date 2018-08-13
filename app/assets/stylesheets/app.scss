@@ -4,7 +4,12 @@
 @import "./constants";
 @import "./mixins";
 
-a.primary-button {
+hr.grey-divider {
+  border: solid 0.5px #979797;
+  margin: 0px;
+}
+
+a.primary-button, button.primary-button {
   width: 150px;
   height: 40px;
   border-radius: 20px;
@@ -105,7 +110,6 @@ span.icon-text-box {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background-image: radial-gradient(circle at 50% 49%, white, rgba(239, 236, 234, 0.4));
   .contents-container {
     position: absolute;
     width: 100vw;
@@ -114,6 +118,8 @@ span.icon-text-box {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    z-index: 2;
+    background-image: radial-gradient(circle at 50% 49%, white, rgba(239, 236, 234, 0.4));
     .contents-box {
       display: flex;
       flex-direction: column;
@@ -171,7 +177,7 @@ span.icon-text-box {
     display: flex;
     flex-wrap: wrap;
     position: relative;
-    z-index: -1;
+    z-index: 1;
     .thumbnail {
       width: calc(calc(100vw / 11) - 2px);
       height: calc(calc(100vw / 11) - 2px);
@@ -209,6 +215,12 @@ span.icon-text-box {
     @include responsive(tablet) {
       flex-direction: column;
       margin: 0px 20px;
+    }
+    .section-title {
+
+    }
+    .section-subtitle {
+      margin-bottom: 20px;
     }
     .main-col-text {
       width: 60%;
@@ -350,7 +362,7 @@ a.close-button {
 }
 
 .mobile-menu-container {
-  display: flex;
+  display: none;
   justify-content: space-between;
   align-items: center;
   padding: 0 10px;
@@ -362,21 +374,16 @@ a.close-button {
   opacity: 1;
   transition-property: opacity;
   transition-duration: 0.5s;
+  @include responsive(tablet) {
+    display: flex;
+  }
   a.menu-button {
     padding: 5px 5px 5px 0px;
     img {
       height: 30px;
     }
   }
-  a.menu-button-fixed {
-
-  }
   .mobile-spy-right {
-    @include responsive(tablet) {
-
-    }
-  }
-  .mobile-spy-fixed {
     @include responsive(tablet) {
 
     }
@@ -384,5 +391,114 @@ a.close-button {
 }
 
 .mobile-menu-container-fixed {
-  position: fixed !important;
+  position: none;
+  @include responsive(tablet) {
+    position: fixed !important;
+  }
+}
+
+.team-container {
+  display: flex;
+  flex-wrap: wrap;
+  .person-container {
+    width: 33%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 10px;
+    @include responsive(tablet) {
+      width: 100%;
+    }
+    .profile-avatar  {
+      width: 60px;
+      height: 60px;
+      border-radius: 33px;
+      object-fit: cover;
+      margin: 3px 10px 3px 0px;
+    }
+    .person-info-container {
+
+      .profile-name {
+        margin: 3px;
+      }
+      .profile-role {
+        margin: 3px;
+      }
+      a {
+        text-decoration: none;
+        .profile-steemit {
+          margin: 3px;
+        }
+      }
+    }
+  }
+}
+
+.team-delegators {
+  max-height: 228px;
+  overflow: hidden;
+}
+
+.unfold {
+  max-height: 100%;
+}
+
+.footer-container {
+  background-color: black;
+  color: $text_grey;
+  padding: 0px 200px;
+  display: flex;
+  @include responsive(tablet) {
+    padding: 0px;
+    flex-direction: column;
+  }
+  .footer-left {
+    padding: 50px 20px;
+    display: flex;
+    width: 50%;
+    @include responsive(tablet) {
+      flex-direction: column;
+      margin: 0px;
+      padding: 20px;
+      width: auto;
+    }
+    .footer-box {
+      width: 40%;
+      margin-right: 10%;
+      @include responsive(tablet) {
+        width: 100%;
+        margin-right: 0%;
+        margin-bottom: 20px;
+      }
+      .small-title {
+        display: block;
+        color: white;
+        margin-bottom: 10px;
+      }
+      ul {
+        padding: 0;
+        margin: 0;
+        li {
+          list-style: none;
+          a {
+            text-decoration: none;
+            color: $text_grey;
+          }
+        }
+      }
+    }
+  }
+
+  .footer-right {
+    padding: 50px 20px;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    @include responsive(tablet) {
+      flex-direction: column;
+      margin-bottom: 20px;
+      padding: 20px;
+      width: auto;
+    }
+  }
 }

@@ -5,6 +5,7 @@
     window.sections = {};
     var section = document.querySelectorAll(".section");
     Array.prototype.forEach.call(section, function(e) {
+      console.log(e.id, e.offsetTop)
       window.sections[e.id] = e.offsetTop;
     });
 
@@ -14,7 +15,7 @@
       document.querySelector('a[data-target*=' + target + ']').setAttribute('class', 'active');
       closeNav();
       $([document.documentElement, document.body]).animate({
-        scrollTop: $("#" + target).offset().top
+        scrollTop: $("#" + target).offset().top + 10
       }, 0);
     });
 
@@ -28,6 +29,11 @@
 
     $("#sidenavBack").click(function() {
       closeNav();
+    });
+
+    $("#expandDelegators").click(function() {
+      document.querySelector('.team-delegators').classList.toggle("unfold");
+      $(this).css("display", "none");
     });
 
     function openNav() {
@@ -46,8 +52,7 @@
   var i = 0;
   var beforeScroll;
   window.onscroll = function() {
-    var scrollPosition = document.documentElement.scrollTop;
-    console.log(scrollPosition)
+    const scrollPosition = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop)
     for (i in window.sections) {
       if ((scrollPosition !== 0) && (window.sections[i] <= scrollPosition)) {
         document.querySelector('.spy-left ul li .active').setAttribute('class', ' ');
