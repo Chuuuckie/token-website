@@ -136,12 +136,16 @@ span.icon-text-box {
         width: 70vw;
       }
       img.logo-top {
-        width: 35px;
-        height: 54px;
+        width: 70px;
+        height: 108px;
         object-fit: contain;
+        @include responsive(tablet) {
+          width: 35px;
+          height: 54px;
+        }
       }
       h1.logo-text {
-        font-size: 20px;
+        font-size: 40px;
         font-weight: bold;
         font-style: normal;
         font-stretch: normal;
@@ -149,17 +153,21 @@ span.icon-text-box {
         letter-spacing: 2.5px;
         text-align: center;
         color: $primary;
+        @include responsive(tablet) {
+          font-size: 25px;
+        }
       }
       h1.contents-title {
-        font-size: 20px;
-        font-weight: bold;
-        font-style: normal;
-        font-stretch: normal;
-        line-height: normal;
+        font-size: 40px;
+        line-height: 1.5;
         letter-spacing: 2.5px;
         text-align: center;
         color: #4a4a4a;
         margin: 40px 0px 0px 0px;
+        @include responsive(tablet) {
+          font-size: 25px;
+          line-height: 1.2;
+        }
       }
       p.contents-text {
         text-align: center;

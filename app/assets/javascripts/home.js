@@ -2,34 +2,17 @@
   'use strict';
 
   $( document ).ready(function() {
-    window.sections = {};
-    var section = document.querySelectorAll(".section");
-    Array.prototype.forEach.call(section, function(e) {
-      window.sections[e.id] = e.offsetTop;
-    });
-
     $("li.spy-button").click(function() {
       var target = $(this).children("a").attr("data-target");
       document.querySelector('.active').setAttribute('class', ' ');
       document.querySelector('a[data-target*=' + target + ']').setAttribute('class', 'active');
       closeNav();
-      $([document.documentElement, document.body]).animate({
-        scrollTop: $("#" + target).offset().top + 10
-      }, 0);
+      $([document.documentElement, document.body]).animate({ scrollTop: $("#" + target).offset().top + 10 }, 0);
     });
 
-    $("#openNav").click(function() {
-      openNav();
-    });
-
-    $("#closeNav").click(function() {
-      closeNav();
-    });
-
-    $("#sidenavBack").click(function() {
-      closeNav();
-    });
-
+    $("#openNav").click(function() { openNav() });
+    $("#closeNav").click(function() { closeNav() });
+    $("#sidenavBack").click(function() { closeNav() });
     $("#expandDelegators").click(function() {
       document.querySelector('.team-delegators').classList.toggle("unfold");
       $(this).css("display", "none");
@@ -48,9 +31,18 @@
     }
   });
 
+  $(window).on("load", function() {
+    window.sections = {};
+    var section = document.querySelectorAll(".section");
+    Array.prototype.forEach.call(section, function(e) {
+      window.sections[e.id] = e.offsetTop;
+    });
+  })
+
   var i = 0;
   var beforeScroll;
-  window.onscroll = function() {
+
+  $(window).scroll(function() {
     const scrollPosition = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop)
     for (i in window.sections) {
       if ((scrollPosition !== 0) && (window.sections[i] <= scrollPosition)) {
@@ -86,5 +78,5 @@
       document.querySelector('.mobile-menu-container').style.top = "100vh";
     }
     beforeScroll = scrollPosition;
-  };
+  })
 })();

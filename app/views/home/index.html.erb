@@ -7,7 +7,7 @@
       <p class="contents-text">
         <span class="primary-color"><%= decify @stats[:count] %></span> cool products, <span class="primary-color"><%= dollar @stats[:value] %></span> hunter rewards generated over <span class="primary-color"><%= decify @products_days %></span> days on top of Steem Blockchain
       </p>
-      <a href="#" class="primary-button">LEARN MORE</a>
+      <a href="#" class="primary-button"><%= t('terms.learn_more') %></a>
     </div>
   </div>
   <div class="thumbnail-container">
@@ -25,7 +25,7 @@
       <%= render partial: 'home/menu_links' %>
     </div>
     <div class="spy-right">
-      <a href="https://steemhunt.com" target="_blank" class="primary-button">LIVE PRODUCT</a>
+      <a href="https://steemhunt.com" target="_blank" class="primary-button"><%= t('terms.live_product') %></a>
     </div>
   </div>
   <div class="mobile-only">
@@ -37,15 +37,14 @@
       <%= image_tag("icon-menu.svg") %>
     </a>
     <div class="mobile-spy-right">
-      <a href="https://steemhunt.com" target="_blank" class="primary-button">LIVE PRODUCT</a>
+      <a href="https://steemhunt.com" target="_blank" class="primary-button"><%= t('terms.live_product') %></a>
     </div>
   </div>
 
   <div class="main-row flex-row section" id="hunt-platform">
     <div class="main-col-text">
-      <h1 class="primary-color">What is HUNT Platform?</h1>
-      <p class="grey-color">HUNT is an incentivising community platform on top of Steem Blockchain for product influencers who have exceptional knowledge and passions for cool new products.
-  It’s a bridging platform for makers to reach out to the product early adopters for the success of their product launching.</p>
+      <h1 class="primary-color"><%= t('platform.title') %></h1>
+      <p class="grey-color"><%= t('platform.content') %></p>
       <a href="#" class="more-link">Learn more <%= image_tag("icon-arrow-right.svg", class: "svg-icon-p") %></a>
     </div>
     <div class="main-col-image">
@@ -58,31 +57,29 @@
       <%= image_tag("img-hunt-economy@3x") %>
     </div>
     <div class="main-col-text">
-      <h1 class="primary-color">HUNT Platform Portfolio</h1>
-      <p class="grey-color">The goal of HUNT platform is to create a decentralised ecosystem by providing three blockchain-based HUNT token rewards platform on top of Smart Media Token system.</p>
+      <h1 class="primary-color"><%= t('portfolio.title') %></h1>
+      <p class="grey-color"><%= t('portfolio.content') %></p>
       <div class="hunt-bar">
         <%= image_tag("logo_sh@2x.png") %>
-        <p class="grey-color"><span class="primary-color">Steemhunt</span> is a community where hunters introduce cool new products</p>
+        <p class="grey-color"><span class="primary-color"><%= t('terms.steemhunt') %></span><%= t('portfolio.steemhunt_is') %></p>
       </div>
       <div class="hunt-bar">
         <%= image_tag("logo_rh@2x.png") %>
-        <p class="grey-color"><span class="primary-color">Reviewhunt</span> is a marketing channel where makers suggest bounty missions for hunters</p>
+        <p class="grey-color"><span class="primary-color"><%= t('terms.reviewhunt') %></span><%= t('portfolio.reviewhunt_is') %></p>
       </div>
       <div class="hunt-bar">
         <%= image_tag("logo_ih@2x.png") %>
-        <p class="grey-color"><span class="primary-color">Ideahunt</span> is a Kickstarter-like platform where makers run crowdfunding campaigns</p>
+        <p class="grey-color"><span class="primary-color"><%= t('terms.ideahunt') %></span><%= t('portfolio.ideahunt_is') %></p>
       </div>
     </div>
   </div>
 
   <div class="main-row section" id="steemhunt">
     <h2 class="primary-color section-title">Steemhunt <span class="icon-text-box">LIVE</span> </h2>
-    <h1 class="white-color section-subtitle">Daily Ranking for Effortlessly Cool Products That Rewards Hunters</h1>
+    <h1 class="white-color section-subtitle"><%= t('steemhunt.sub_title') %></h1>
+    <p class="grey-color"><%= t('steemhunt.content') %></p>
     <p class="grey-color">
-      Steemhunt is a community for geeks, alpha nerds, and product enthusiasts who love to dig out new products and talk about them with others. We call them as “Product Hunters.” To keep them motivated and maintain the community as ad-free playground, we adopted Steem blockchain to reward them by cryptocurrency for their dedicated activities.
-    </p>
-    <p class="grey-color">
-      Hunted products &amp; Approx. USD rewards paid since March 2018: <br>
+      <%= t('steemhunt.content_2') %> <br>
       <span class="white-color"><%= decify @stats[:count] %> products, <%= dollar @stats[:value] %> rewards</span>
     </p>
     <a href="https://steemhunt.com" target="_blank" class="more-link">See the live product <%= image_tag("icon-arrow-right.svg", class: "svg-icon-p") %></a>
@@ -91,44 +88,34 @@
 
   <div class="main-row section" id="reviewhunt">
     <h2 class="primary-color section-title">Reviewhunt</h2>
-    <h1 class="white-color section-subtitle">Post Bounties for Product Influencers to Unleash your Launching Hypes</h1>
-    <p class="grey-color">
-      Makers/companies spend enormous amount of time/efforts to raise attentions from product early-adoptors because their word of mouth impact is far higher than normal people. Via Reviewhunt, It will never be easier for makers to attract the early-adoptors by posting bounties to boost their early-stage product cycle.
-    </p>
+    <h1 class="white-color section-subtitle"><%= t('reviewhunt.sub_title') %></h1>
+    <p class="grey-color"><%= t('reviewhunt.content') %></p>
     <%= image_tag("reviewhunt@2x.png", class: "full-width") %>
   </div>
 
   <div class="main-row section" id="ideahunt">
     <h2 class="primary-color section-title">Ideahunt</h2>
-    <h1 class="white-color section-subtitle">Powerful Product Geeks Now in Crowdfunding Market</h1>
-    <p class="grey-color">
-      The biggest problem for makers to run crowdfunding is that it is very limited to reach out to the right targets. Many projects on the major crowdfunding platforms need to heavily advertise them to other media channels too. The Ideahunt, backed by the product enthusiasts from Steemhunt, can provide hassle-free and perfectly target-centered crowdfunding platform. The hunters will constantly look for an innovative products to purchase by using their HUNT tokens. You will be free from all the pressures that you have to advertise your project.
-    </p>
+    <h1 class="white-color section-subtitle"><%= t('ideahunt.sub_title') %></h1>
+    <p class="grey-color"><%= t('ideahunt.content') %></p>
     <%= image_tag("ideahunt@2x.png", class: "full-width") %>
   </div>
 
   <div class="main-row section" id="token-economy">
     <h2 class="primary-color section-title">Token Economy</h2>
-    <h1 class="white-color section-subtitle">Tokens that Create an Interchaneable Ecosystem between Makers and Early-adopters</h1>
-    <p class="grey-color">
-      Hunters earn HUNT tokens by sharing/upvoting cool new products on Steemhunt community. Makers can also be hunters by sharing their own products.
-    </p>
-    <p class="grey-color">
-      Makers buy HUNT tokens and post bounties for hunters in Reviewhunt to promote their product launch such as app downloads, reviews, or social media activities. Hunters can earn HUNT tokens from makers.
-    </p>
-    <p class="grey-color">
-      Makers run crowdfunding campaigns in Ideahunt. Hunters can use their HUNT tokens to participate/purchase products.
-    </p>
-    <%= image_tag(with_mobile("img_hunt_flow@2x.png"), class: "full-width") %>
+    <h1 class="white-color section-subtitle"><%= t('token_economy.sub_title') %></h1>
+    <p class="grey-color"><%= t('token_economy.content') %></p>
+    <p class="grey-color"><%= t('token_economy.content_2') %></p>
+    <p class="grey-color"><%= t('token_economy.content_3') %></p>
+    <%= image_tag("img_hunt_flow@2x.png", class: "full-width mobile-hide") %>
+    <%= image_tag("m_img_hunt_flow@2x.png", class: "full-width mobile-only") %>
   </div>
 
   <div class="main-row section" id="token-distribution">
     <h2 class="primary-color section-title">Token Distribution</h2>
-    <h1 class="white-color section-subtitle">No Crowd Sale, 50% Airdrop to Focus on Product/Community Building</h1>
-    <p class="grey-color">
-      The most important KSF (Key Successful Factor) of the HUNT platform is to gather as many product influencers as possible and amplify our community activities, rather than raising funds via crowd sales. So, we don’t run any public token sales. Instead, 50% of the tokens are airdropped for our target users so that the HUNT platform can invite many product influencers.
-    </p>
-    <%= image_tag(with_mobile("img_token_distribution@2x.png"), class: "full-width") %>
+    <h1 class="white-color section-subtitle"><%= t('token_distribution.sub_title') %></h1>
+    <p class="grey-color"><%= t('token_distribution.content') %></p>
+    <%= image_tag("img_token_distribution@2x.png", class: "full-width mobile-hide") %>
+    <%= image_tag("m_img_token_distribution@2x.png", class: "full-width mobile-only") %>
   </div>
 
   <div class="main-row section" id="roadmap">
@@ -137,18 +124,15 @@
 
   <div class="main-row section" id="whitepaper">
     <h2 class="primary-color section-title">Whitepaper</h2>
-    <h1 class="white-color section-subtitle">We DON’T have time to Create 99% fiction paper.</h1>
-    <p class="grey-color">
-      Creating an eye-catching and highly detailed whitepaper becomes one of the most important parts for many blockchain projects. As well as platform coins, many decentralised applications are writing gazilion-page-long whitepapers - most of the contents are fiction and nobody bothers to finish reading it.
-      HUNT platform is simple to understand, it’s a Steem dApp so there’s no need to explain the blockchain technology. Also, this is a community-oriented project, so the value of the token is highly linked to the community value. Thus, we have no reasons to create a complicated fiction paper, instead we should focus on building this community platform.
-    </p>
+    <h1 class="white-color section-subtitle"><%= t('whitepaper.sub_title') %></h1>
+    <p class="grey-color"><%= t('whitepaper.content') %></p>
     <a href="https://steemhunt.com" target="_blank" class="more-link">Read HUNT Pitch Deck <%= image_tag("icon-arrow-right.svg", class: "svg-icon-p") %></a> <br>
     <a href="https://steem.io/steem-whitepaper.pdf" target="_blank" class="more-link">Read Steem Whitepaper <%= image_tag("icon-arrow-right.svg", class: "svg-icon-p") %></a>
   </div>
 
   <div class="main-row section" id="team">
     <h2 class="primary-color section-title">Team</h2>
-    <h1 class="white-color section-subtitle">Over 250 Community Members Worldwide Involved in Team Operations</h1>
+    <h1 class="white-color section-subtitle"><%= t('team.sub_title') %></h1>
     <p class="grey-color">Team (<%= @team.size %>)</p>
     <div class="team-container">
       <%= render partial: "home/person", collection: @team, cached: true %>
