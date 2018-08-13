@@ -5,7 +5,6 @@
     window.sections = {};
     var section = document.querySelectorAll(".section");
     Array.prototype.forEach.call(section, function(e) {
-      console.log(e.id, e.offsetTop)
       window.sections[e.id] = e.offsetTop;
     });
 
