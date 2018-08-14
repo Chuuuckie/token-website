@@ -1,5 +1,4 @@
 class Post < ApplicationRecord
-  DEFAULT_IMAGE = "https://steemitimages.com/128x128/https://steemitimages.com/DQmb2HNSGKN3pakguJ4ChCRjgkVuDN9WniFRPmrxoJ4sjR4"
   TEAM = [
     {name: "Sebastian Kim", role: "Founder, Developer", steemit: "tabris"},
     {name: "YoungWhi Cho", role: "Founder, Designer", steemit: "project7"},
@@ -15,6 +14,6 @@ class Post < ApplicationRecord
   ].map {|person| {name: person, role: "Influencer", steemit: person} }
 
   def thumbnail
-    "https://steemitimages.com/100x100/#{self.images[0]["link"]}"
+    "https://steemitimages.com/300x300/#{self.images[0]["link"]}"
   end
 end
