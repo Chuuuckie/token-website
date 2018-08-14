@@ -212,7 +212,7 @@ span.icon-text-box {
 }
 
 .main-container {
-  background-color: black;
+  background-color: #151515;
   color: $text_grey;
   padding: 0px 200px;
   @include responsive(tablet) {
@@ -420,7 +420,7 @@ a.close-button {
     .profile-avatar  {
       width: 60px;
       height: 60px;
-      border-radius: 33px;
+      border-radius: 50%;
       object-fit: cover;
       margin: 3px 10px 3px 0px;
     }
