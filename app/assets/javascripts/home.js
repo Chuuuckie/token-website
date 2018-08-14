@@ -42,12 +42,12 @@
     var $landingPage = $('#landing');
     var vw = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
     var vh = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-    var amplitude = 10;
+    var amplitude = 15;
 
     $(document).mousemove(function(e) {
       var mx = e.pageX;
       var my = e.pageY;
-      if ((mx <= vw) && (my <= vh * 2)) {
+      if ((mx <= vw) && (my <= vh * 3)) {
         var moveX = (((vw/2) - mx) / (vw/2)) * amplitude;
         var moveY = (((vh/2) - my) / (vh/2)) * amplitude;
         var transformTo = 'translateX(' + moveX.toString() + 'px) translateY(' + moveY.toString() + 'px)'
