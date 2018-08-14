@@ -2,38 +2,38 @@
   'use strict';
 
   $(document).ready(function() {
-    $("li.spy-button").click(function() {
-      var target = $(this).children("a").attr("data-target");
+    $('li.spy-button').click(function() {
+      var target = $(this).children('a').attr('data-target');
       $('.active').removeClass('active');
       $('a[data-target*=' + target + ']').addClass('active');
       closeNav();
-      $([document.documentElement, document.body]).animate({ scrollTop: $("#" + target).offset().top + 10 }, 0);
+      $([document.documentElement, document.body]).animate({ scrollTop: $('#' + target).offset().top + 10 }, 0);
     });
 
-    $("#openNav").click(function() { openNav() });
-    $("#closeNav").click(function() { closeNav() });
-    $("#sidenavBack").click(function() { closeNav() });
-    $("#expandDelegators").click(function() {
-      $('.team-delegators').classList.toggle("unfold");
-      $(this).css("display", "none");
+    $('#openNav').click(function() { openNav() });
+    $('#closeNav').click(function() { closeNav() });
+    $('#sidenavBack').click(function() { closeNav() });
+    $('#expandDelegators').click(function() {
+      $('.team-delegators').toggleClass('unfold');
+      $(this).css('display', 'none');
     });
 
     function openNav() {
-      $("#sidenavBack").css('display', 'block');
-      $("#sidenavBack").css('backgroundColor', 'rgba(0, 0, 0, 0.5)');
-      $("#mySidenav").css('marginLeft', '100vw');
+      $('#sidenavBack').css('display', 'block');
+      $('#sidenavBack').css('backgroundColor', 'rgba(0, 0, 0, 0.5)');
+      $('#mySidenav').css('marginLeft', '100vw');
     }
 
     function closeNav() {
-      $("#sidenavBack").css('display', 'none');
-      $("#sidenavBack").css('backgroundColor', 'rgba(0, 0, 0, 0)');
-      $("#mySidenav").css('marginLeft', '0');
+      $('#sidenavBack').css('display', 'none');
+      $('#sidenavBack').css('backgroundColor', 'rgba(0, 0, 0, 0)');
+      $('#mySidenav').css('marginLeft', '0');
     }
   });
 
-  $(window).on("load", function() {
+  $(window).on('load', function() {
     window.sections = {};
-    var section = $(".section");
+    var section = $('.section');
     Array.prototype.forEach.call(section, function(e) {
       window.sections[e.id] = e.offsetTop;
     });

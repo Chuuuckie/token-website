@@ -1,13 +1,13 @@
-<% name, role = person[:name], person[:role] %>
-<% steemit, image_url = person[:steemit], person[:steemit] ? "https://steemitimages.com/u/#{person[:steemit]}/avatar" : image_path('img_plc@2x.png') %>
+<% profile_picture = person[:no_thumbnail] ? image_path('img_plc@2x.png') : "https://img.busy.org/@#{person[:steemit]}?s=120" %>
+
 <div class="person-container">
-  <%= image_tag(image_url, class: "profile-avatar", onerror: "this.error=null;this.src='#{image_path('img_plc@2x.png')}'") %>
+  <%= image_tag(profile_picture, class: 'profile-avatar', onerror: "this.error=null;this.src='#{image_path('img_plc@2x.png')}'") %>
   <div class="person-info-container">
-      <% if steemit %>
-        <a href="https://steemhunt.com/author/@<%= steemit %>" target="_blank">
-          <span class="primary-color profile-name"><%= name %></span>
+      <% if person[:steemit] %>
+        <a href="https://steemhunt.com/author/@<%= person[:steemit] %>" target="_blank">
+          <span class="primary-color profile-name"><%= person[:name] %></span>
         </a>
       <% end %> <br>
-    <span class="grey-color profile-role"><%= role %></span> <br>
+    <span class="grey-color profile-role"><%= person[:role] %></span> <br>
   </div>
 </div>
