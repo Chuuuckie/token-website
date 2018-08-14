@@ -13,7 +13,7 @@ a.primary-button, button.primary-button {
   width: 150px;
   height: 40px;
   border-radius: 20px;
-  font-size: 15px;
+  font-size: 0.72rem;
   color: $primary;
   border: solid 1px $primary;
   background: transparent;
@@ -127,7 +127,7 @@ span.icon-text-box {
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      width: 50vw;
+      width: 39vw;
       margin-top: 5vw;
 
       @include responsive(ipadpro) {
@@ -149,7 +149,7 @@ span.icon-text-box {
         }
       }
       h1.logo-text {
-        font-size: 40px;
+        font-size: 2.0rem;
         font-weight: bold;
         line-height: normal;
         letter-spacing: 2.5px;
@@ -160,7 +160,7 @@ span.icon-text-box {
         }
       }
       h1.contents-title {
-        font-size: 2.5rem;
+        font-size: 2.0rem;
         line-height: 1.5;
         letter-spacing: 1.2px;
         text-align: center;
@@ -173,7 +173,7 @@ span.icon-text-box {
       }
       p.contents-text {
         text-align: center;
-        font-size: 1.375rem;
+        font-size: 1.125rem;
         color: rgba(0, 0, 0, 0.65);
         margin-top: 0.6875rem;
       }
@@ -226,7 +226,8 @@ span.icon-text-box {
     padding: 0px;
   }
   .main-row {
-    padding: 50px 20px;
+    font-size: 1.125rem;
+    padding: 5rem 7.5rem;
     @include responsive(tablet) {
       flex-direction: column;
       margin: 0px 20px;
@@ -269,8 +270,8 @@ span.icon-text-box {
       padding: 0;
       margin: 0;
       li {
-        line-height: 30.5px;
-        font-size: 12.2px;
+        line-height: 2rem;
+        font-size: 0.8125rem;
         color: hsla(0,0%,100%,.8);
         letter-spacing: .3294px;
         font-weight: lighter;
@@ -334,8 +335,8 @@ span.icon-text-box {
       padding: 0;
       margin: 0;
       li {
-        line-height: 30.5px;
-        font-size: 12.2px;
+        line-height: 2rem;
+        font-size: 0.8125rem;
         color: hsla(0,0%,100%,.8);
         letter-spacing: .3294px;
         font-weight: lighter;
@@ -380,12 +381,21 @@ a.close-button {
   @include responsive(tablet) {
     display: flex;
   }
+
+  &.fixed {
+    position: none;
+    @include responsive(tablet) {
+      position: fixed !important;
+    }
+  }
+
   a.menu-button {
     padding: 5px 5px 5px 0px;
     img {
       height: 30px;
     }
   }
+
   .mobile-spy-right {
     @include responsive(tablet) {
 
@@ -393,12 +403,54 @@ a.close-button {
   }
 }
 
-.fixed {
-  position: none;
-  @include responsive(tablet) {
-    position: fixed !important;
+.roadmap-table {
+  color: #9b9b9b;
+  border-collapse: collapse;
+
+  tr, td, th {
+    margin: 0;
+    padding: 0;
+  }
+
+  tr {
+    th, td {
+      vertical-align: middle;
+    }
+
+    th {
+      color: #fff;
+      font-weight: 300;
+    }
+
+    td.center {
+      padding: 0 1rem;
+      .circle, .bar {
+        display: block;
+        margin: 0 auto;
+      }
+
+      .circle {
+        width: 0.75rem;
+        height: 0.75rem;
+        border: 2px solid $primary;
+        border-radius: 50%;
+        background-color: #333;
+        z-index: 99999;
+      }
+
+      .bar {
+        width: 2px;
+        height: 1rem;
+        background-color: #d5d9dc;
+
+        &.transparent {
+          background-color: transparent;
+        }
+      }
+    }
   }
 }
+
 
 .team-container {
   display: flex;
