@@ -5,7 +5,7 @@ class HomeController < ApplicationController
 
   def index
     @thumbnails = Rails.cache.fetch('thumbnails', expires_in: 30.minutes) do
-      Post.all.order(hunt_score: :desc).limit(200).map(&:thumbnail).reject {|thumbnail| thumbnail =~ /.*\.gif$/ }
+      Post.all.order(hunt_score: :desc).limit(200).map(&:thumbnail).reject { |thumbnail| thumbnail =~ /.*\.gif$/ }
     end
     @stats = Rails.cache.fetch('stats', expires_in: 1.minute) do
       {
