@@ -16,10 +16,6 @@ class HomeController < ApplicationController
     'themanualbot', 'redtravels', 'elleok', 'joythewanderer', 'ady-was-here', 'raulmz', 'chuuuckie', 'shaphir', 'mobi72'
   ].map {|person| { name: person, role: "Influencer", steemit: person} }
 
-  THUMBNAIL_EXCLUSION = [
-    'misterdelegation', 'goodnewworld', 'kmyang62', 'freedom', 'i-d', 'arama', 'bramd', 'matildah'
-  ]
-
   def index
     @thumbnails = Rails.cache.fetch('thumbnails', expires_in: 30.minutes) do
       Post.select(:images).order(hunt_score: :desc).limit(200).map(&:thumbnail).reject { |t| t =~ /.*\.gif$/ }
@@ -35,14 +31,11 @@ class HomeController < ApplicationController
     @moderators = MODERATOR_ACCOUNTS
     @influencers = INFLUENCER_ACCOUNTS
     @delegators = JSON.parse(File.read('delegators.json')).map { |del|
-      base = {
+      {
         name: del['delegator'],
         role: "delegated #{number_to_currency((del["sp"] * steem_price).round(2))}",
         steemit: del['delegator']
       }
-      base[:no_thumbnail] = true if THUMBNAIL_EXCLUSION.include?(base[:steemit])
-
-      base
     }
   end
 
