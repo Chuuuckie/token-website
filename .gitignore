@@ -33,3 +33,6 @@ Thumbs.db
 
 # Pre-subscription
 public/*
+
+config/master.key
+storage/*

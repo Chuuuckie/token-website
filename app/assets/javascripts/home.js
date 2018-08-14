@@ -35,10 +35,27 @@
 
     var i = 0;
     var beforeScroll;
+    var $thumbnailContainer = $('.thumbnail-container');
     var $mobileMenu = $('.mobile-menu-container');
     var $menuItems = $('.menu-items');
     var $spys = $('.spy-left, .spy-right');
     var $landingPage = $('#landing');
+    var vw = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    var vh = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+    var amplitude = 10;
+
+    $(document).mousemove(function(e) {
+      var mx = e.pageX;
+      var my = e.pageY;
+      if ((mx <= vw) && (my <= vh * 2)) {
+        var moveX = (((vw/2) - mx) / (vw/2)) * amplitude;
+        var moveY = (((vh/2) - my) / (vh/2)) * amplitude;
+        var transformTo = 'translateX(' + moveX.toString() + 'px) translateY(' + moveY.toString() + 'px)'
+        $thumbnailContainer.css('transform', transformTo)
+      } else {
+        $thumbnailContainer.css('transform', 'translateX(0px) translateY(0px)')
+      }
+    });
 
     $(window).scroll(function() {
       const scrollPosition = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop);

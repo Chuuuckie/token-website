@@ -188,6 +188,10 @@ span.icon-text-box {
     flex-wrap: wrap;
     position: relative;
     z-index: 1;
+    width: 110vw;
+    left: -5vw;
+    top: -5vh;
+    transform: translateX(0px) translateY(0px);
     .thumbnail {
       width: calc(calc(100vw / 11) - 2px);
       height: calc(calc(100vw / 11) - 2px);
