@@ -17,7 +17,7 @@ class HomeController < ApplicationController
   ].map {|person| { name: person, role: "Influencer", steemit: person} }
 
   THUMBNAIL_EXCLUSION = [
-    'misterdelegation', 'goodnewworld', 'kmyang62', 'freedom', 'i-d', 'arama', 'bramd', 'matildah'
+    'bramd', 'matildah'
   ]
 
   def index
