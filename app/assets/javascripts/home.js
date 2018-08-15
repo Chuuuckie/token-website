@@ -38,7 +38,7 @@
     var $thumbnailContainer = $('.thumbnail-container');
     var $mobileMenu = $('.mobile-menu-container');
     var $menuItems = $('.menu-items');
-    var $spys = $('.spy-left, .spy-right');
+    var $spys = $('.spy-left');
     var $landingPage = $('#landing');
     var vw = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
     var vh = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);

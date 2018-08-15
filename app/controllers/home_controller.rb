@@ -34,10 +34,14 @@ class HomeController < ApplicationController
     @team = TEAM
     @moderators = MODERATOR_ACCOUNTS
     @influencers = INFLUENCER_ACCOUNTS
+    @total_funded = 0
     @delegators = JSON.parse(File.read('delegators.json')).map { |del|
+      sp_worth = (del["sp"] * steem_price).round(2)
+      @total_funded += sp_worth
+
       base = {
         name: del['delegator'],
-        role: "delegated #{number_to_currency((del["sp"] * steem_price).round(2))}",
+        role: "delegated #{number_to_currency(sp_worth)}",
         steemit: del['delegator']
       }
       base[:no_thumbnail] = true if THUMBNAIL_EXCLUSION.include?(base[:steemit])

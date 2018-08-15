@@ -10,10 +10,9 @@ hr.grey-divider {
 }
 
 a.primary-button, button.primary-button {
-  width: 150px;
-  height: 40px;
-  border-radius: 20px;
-  font-size: 0.72rem;
+  padding: 0.8em 2.5em;
+  border-radius: 50vh;
+  font-size: 0.8rem;
   color: $primary;
   border: solid 1px $primary;
   background: transparent;
@@ -34,23 +33,26 @@ a.primary-button, button.primary-button {
 a.more-link {
   text-decoration: none;
   color: $primary;
-  display: inline-flex;
-  justify-content: flex-start;
-  align-items: center;
+  display: block;
 }
 
 img.full-width {
-  width: 100%;
-  margin: 40px 0px;
+  width: 75%;
+  margin-top: 3rem;
   @include responsive(tablet) {
     margin: 20px 0px;
+  }
+
+  &.sh-mockup {
+    width: 82%;
+    margin-left: -6.8%;
   }
 }
 
 img.svg-icon-p {
-  height: 16px;
-  margin-top: 2px;
-  margin-left: 2px;
+  height: 1em;
+  margin-left: 0.3rem;
+  vertical-align: middle;
 }
 
 span.icon-text-box {
@@ -74,24 +76,10 @@ span.icon-text-box {
   }
 }
 
-.hunt-bar {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  min-height: 50px;
-  align-items: center;
-  img {
-    margin-right: 20px;
-    height: 40px;
-  }
-  p {
-    margin: 6px 0px;
-  }
-}
-
 .flex-row {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
 
 .flex-center-center {
@@ -108,10 +96,75 @@ span.icon-text-box {
   display: block;
 }
 
+.main-container {
+  background-color: #151515;
+  color: $text_grey;
+  padding: 0px 80px 0 200px;
+}
+
+.main-row {
+  font-size: 1.125rem;
+  padding: 5rem 0 0 7.5rem;
+
+  &.first {
+    padding-top: 9.5rem;
+  }
+
+  @include responsive(tablet) {
+    flex-direction: column;
+    margin: 0px 20px;
+  }
+  .section-subtitle {
+    max-width: 75%;
+    margin-bottom: 20px;
+  }
+
+  p, ul {
+    max-width: 75%;
+    margin: 2.2rem 0;
+  }
+
+  .main-col-text {
+    width: 45%;
+
+    p {
+      max-width: 100%;
+    }
+  }
+
+  .main-col-image {
+    display: flex;
+    align-items: center;
+    width: 45%;
+
+    img {
+      margin: auto;
+      width: 100%;
+    }
+  }
+
+  .hunt-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    min-height: 50px;
+    align-items: center;
+    img {
+      margin-right: 20px;
+      height: 50px;
+    }
+    p {
+      margin: 0.6rem 0;
+    }
+  }
+} // .main-row
+
+
 .landing-container {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+
   .contents-container {
     position: absolute;
     width: 100vw;
@@ -122,12 +175,13 @@ span.icon-text-box {
     align-items: center;
     z-index: 2;
     background-image: radial-gradient(circle at 50% 49%, white, rgba(239, 236, 234, 0.4));
+
     .contents-box {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      width: 39vw;
+      width: 45vw;
       margin-top: 5vw;
 
       @include responsive(ipadpro) {
@@ -149,7 +203,6 @@ span.icon-text-box {
         }
       }
       h1.logo-text {
-        font-size: 2.0rem;
         font-weight: bold;
         line-height: normal;
         letter-spacing: 2.5px;
@@ -160,12 +213,13 @@ span.icon-text-box {
         }
       }
       h1.contents-title {
-        font-size: 2.0rem;
         line-height: 1.5;
         letter-spacing: 1.2px;
         text-align: center;
         color: #4a4a4a;
         margin: 5rem 0 0 0;
+        font-weight: 700;
+
         @include responsive(tablet) {
           font-size: 25px;
           line-height: 1.2;
@@ -173,7 +227,8 @@ span.icon-text-box {
       }
       p.contents-text {
         text-align: center;
-        font-size: 1.125rem;
+        font-size: 1.3rem;
+        font-weight: 500;
         color: rgba(0, 0, 0, 0.65);
         margin-top: 0.6875rem;
       }
@@ -218,86 +273,47 @@ span.icon-text-box {
   }
 }
 
-.main-container {
-  background-color: #151515;
-  color: $text_grey;
-  padding: 0px 200px;
-  @include responsive(tablet) {
-    padding: 0px;
+.spy-left {
+  position: absolute;
+  top: calc(100vh + 80px);
+  left: 80px;
+  img.logo-menu {
+    height: 50px;
+    margin-bottom: 2.4rem;
   }
-  .main-row {
-    font-size: 1.125rem;
-    padding: 5rem 7.5rem;
-    @include responsive(tablet) {
-      flex-direction: column;
-      margin: 0px 20px;
+  ul {
+    display: block;
+    list-style:none;
+    padding: 0;
+    margin: 0;
+    li {
+      line-height: 2rem;
+      font-size: 0.8125rem;
+      color: hsla(0,0%,100%,.8);
+      letter-spacing: .3294px;
+      font-weight: lighter;
+      transition: all .17s ease-in;
+      cursor: pointer;
+      a {
+        color: $text_dark;
+        text-decoration: none;
+      }
+      a.active {
+        color: $primary;
+      }
     }
-    .section-title {
+  }
+}
 
-    }
-    .section-subtitle {
-      margin-bottom: 20px;
-    }
-    .main-col-text {
-      width: 60%;
-      @include responsive(tablet) {
-        width: 100%;
-      }
-    }
-    .main-col-image {
-      width: 40%;
-      @include responsive(tablet) {
-        width: 100%;
-      }
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      img {
-        width: 80%;
-      }
-    }
-  }
-  .spy-left {
-    position: absolute;
-    top: calc(100vh + 40px);
-    left: 40px;
-    img.logo-menu {
-      height: 50px;
-    }
-    ul {
-      display: block;
-      list-style:none;
-      padding: 0;
-      margin: 0;
-      li {
-        line-height: 2rem;
-        font-size: 0.8125rem;
-        color: hsla(0,0%,100%,.8);
-        letter-spacing: .3294px;
-        font-weight: lighter;
-        transition: all .17s ease-in;
-        cursor: pointer;
-        a {
-          color: $text_dark;
-          text-decoration: none;
-        }
-        a.active {
-          color: $primary;
-        }
-      }
-    }
-  }
+.spy-right {
+  position: absolute;
+  top: calc(100vh + 80px);
+  right: 80px;
+}
 
-  .spy-right {
-    position: absolute;
-    top: calc(100vh + 40px);
-    right: 40px;
-  }
-
-  .spy-fixed {
-    position: fixed !important;
-    top: 40px !important;
-  }
+.spy-fixed {
+  position: fixed !important;
+  top: 80px !important;
 }
 
 .sidenav-background {
@@ -325,7 +341,7 @@ span.icon-text-box {
   width: 100vw;
   z-index: 200;
   .sidenav-body {
-    padding: 0 0 80px 40px;
+    padding: 0 0 80px 80px;
     img.logo-menu {
       height: 50px;
     }
@@ -356,7 +372,7 @@ span.icon-text-box {
 
 a.close-button {
   position: absolute;
-  top: -40px;
+  top: -80px;
   margin-top: 50px;
   right: 10px;
   padding: 0 0 20px 20px;
@@ -399,6 +415,21 @@ a.close-button {
   .mobile-spy-right {
     @include responsive(tablet) {
 
+    }
+  }
+}
+
+ul.token-economy {
+  list-style: none;
+  padding: 0;
+
+  li {
+    padding: 1rem 3rem;
+
+    img {
+      float: left;
+      width: 2rem;
+      margin-left: -3rem;
     }
   }
 }
@@ -451,52 +482,64 @@ a.close-button {
   }
 }
 
+.team-section {
+  padding-bottom: 5rem;
+  .category-title {
+    margin: 3rem 0 1rem 0;
+  }
 
-.team-container {
-  display: flex;
-  flex-wrap: wrap;
-  .person-container {
-    width: 33%;
+  .team-container {
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    margin-bottom: 10px;
-    @include responsive(tablet) {
-      width: 100%;
-    }
-    .profile-avatar  {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin: 3px 10px 3px 0px;
-    }
-    .person-info-container {
+    flex-wrap: wrap;
 
-      .profile-name {
-        margin: 3px;
+    .person-container {
+      width: 33%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin-bottom: 10px;
+      @include responsive(tablet) {
+        width: 100%;
       }
-      .profile-role {
-        margin: 3px;
+      .profile-avatar  {
+        width: 4.375rem;
+        height: 4.375rem;
+        border-radius: 50%;
+        object-fit: cover;
+        margin: 0.4rem 0.625rem 0.4rem 0;
       }
-      a {
-        text-decoration: none;
-        .profile-steemit {
-          margin: 3px;
+      .person-info-container {
+        .profile-name {
+          margin: 0.1875rem;
+        }
+        .profile-role {
+          margin: 0.1875rem;
+          font-size: 0.8em;
+        }
+        a {
+          text-decoration: none;
+          .profile-steemit {
+            margin: 0.1875rem;
+          }
         }
       }
     }
-  }
-}
+  } // .team-container
 
-.team-delegators {
-  overflow: hidden;
-  max-height: 228px;
+  .team-delegators {
+    overflow: hidden;
+    max-height: 17rem;
 
-  &.unfold {
-    max-height: none;
+    &.unfold {
+      max-height: none;
+    }
   }
-}
+
+  button.center {
+    margin: 2rem auto;
+  }
+} // .team-section
+
 
 
 .footer-container {
