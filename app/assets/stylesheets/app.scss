@@ -10,7 +10,7 @@ hr.grey-divider {
 }
 
 a.primary-button, button.primary-button {
-  padding: 0.8em 2.5em;
+  padding: 0.8em 2.2em;
   border-radius: 50vh;
   font-size: 0.8rem;
   color: $primary;
@@ -23,12 +23,10 @@ a.primary-button, button.primary-button {
   cursor: pointer;
   outline: none;
   user-select: none;
+  transition: all 0.2s ease-in-out;
 
-  @include responsive(tablet) {
-    width: 80px;
-    height: 25px;
-    border-radius: 12.5px;
-    font-size: 10px;
+  &:hover {
+    opacity: 0.7;
   }
 }
 
@@ -36,18 +34,28 @@ a.more-link {
   text-decoration: none;
   color: $primary;
   display: block;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    opacity: 0.7;
+  }
 }
 
 img.full-width {
   width: 75%;
   margin-top: 3rem;
   @include responsive(tablet) {
-    margin: 20px 0px;
+    width: 100%;
   }
 
   &.sh-mockup {
     width: 82%;
     margin-left: -6.8%;
+
+    @include responsive(tablet) {
+      width: 100%;
+      margin-left: 0;
+    }
   }
 }
 
@@ -65,15 +73,28 @@ span.icon-text-box {
   vertical-align: middle;
 }
 
-.mobile-hide {
+.tablet-hide {
   @include responsive(tablet) {
+    display: none;
+  }
+}
+
+.tablet-only {
+  display: none;
+  @include responsive(tablet) {
+    display: block;
+  }
+}
+
+.mobile-hide {
+  @include responsive(mobile) {
     display: none;
   }
 }
 
 .mobile-only {
   display: none;
-  @include responsive(tablet) {
+  @include responsive(mobile) {
     display: block;
   }
 }
@@ -82,6 +103,14 @@ span.icon-text-box {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
+  @include responsive(mobile) {
+    flex-direction: column;
+
+    &.reverse {
+      flex-direction: column-reverse;
+    }
+  }
 }
 
 .flex-center-center {
@@ -102,6 +131,10 @@ span.icon-text-box {
   background-color: #151515;
   color: $text_grey;
   padding: 0px 80px 0 200px;
+
+  @include responsive(tablet) {
+    padding: 0;
+  }
 }
 
 .main-row {
@@ -110,24 +143,45 @@ span.icon-text-box {
 
   &.first {
     padding-top: 9.5rem;
+
+    @include responsive(tablet) {
+      padding-top: 6rem;
+    }
+    @include responsive(tablet) {
+      padding-top: 5rem;
+    }
   }
 
   @include responsive(tablet) {
-    flex-direction: column;
-    margin: 0px 20px;
+    padding: 3rem;
+  }
+  @include responsive(mobile) {
+    padding: 2rem;
   }
   .section-subtitle {
     max-width: 75%;
     margin-bottom: 20px;
+
+    @include responsive(tablet) {
+      max-width: none;
+    }
   }
 
   p, ul {
     max-width: 75%;
     margin: 2.2rem 0;
+
+    @include responsive(tablet) {
+      max-width: none;
+    }
   }
 
   .main-col-text {
     width: 45%;
+
+    @include responsive(mobile) {
+      width: 100%;
+    }
 
     p {
       max-width: 100%;
@@ -138,6 +192,11 @@ span.icon-text-box {
     display: flex;
     align-items: center;
     width: 45%;
+
+    @include responsive(mobile) {
+      margin-top: 3rem;
+      width: 100%;
+    }
 
     img {
       margin: auto;
@@ -176,7 +235,7 @@ span.icon-text-box {
     justify-content: center;
     align-items: center;
     z-index: 2;
-    background-image: radial-gradient(circle at 50% 49%, white, rgba(239, 236, 234, 0.4));
+    background-image: radial-gradient(circle at 50% 50%, white, rgba(255, 255, 255, 0.75));
 
     .contents-box {
       display: flex;
@@ -186,22 +245,18 @@ span.icon-text-box {
       width: 45vw;
       margin-top: 5vw;
 
-      @include responsive(ipadpro) {
-        width: 45vw;
-      }
       @include responsive(tablet) {
         width: 60vw;
       }
       @include responsive(mobile) {
-        width: 70vw;
+        width: 80vw;
       }
       img.logo-top {
-        width: 72px;
-        height: 108px;
+        width: 4.8rem;
         object-fit: contain;
-        @include responsive(tablet) {
-          width: 35px;
-          height: 54px;
+
+        @include responsive(mobile) {
+          width: 3.8rem;
         }
       }
       h1.logo-text {
@@ -210,9 +265,6 @@ span.icon-text-box {
         letter-spacing: 2.5px;
         text-align: center;
         color: $primary;
-        @include responsive(tablet) {
-          font-size: 25px;
-        }
       }
       h1.contents-title {
         line-height: 1.5;
@@ -222,9 +274,9 @@ span.icon-text-box {
         margin: 5rem 0 0 0;
         font-weight: 700;
 
-        @include responsive(tablet) {
-          font-size: 25px;
-          line-height: 1.2;
+        @include responsive(mobile) {
+          font-size: 1.8rem;
+          margin: 4rem 0 0 0;
         }
       }
       p.contents-text {
@@ -237,6 +289,10 @@ span.icon-text-box {
 
       .primary-button {
         margin-top: 5rem;
+
+        @include responsive(mobile) {
+          margin-top: 4rem;
+        }
       }
     }
   }
@@ -249,13 +305,16 @@ span.icon-text-box {
     left: -5vw;
     top: -5vh;
     transform: translateX(0px) translateY(0px);
+
+    @include responsive(ipadpro) {
+      left: 0;
+      top: 0;
+    }
+
     .thumbnail {
+      border: solid 1px #fff;
       width: calc(calc(100vw / 11) - 2px);
       height: calc(calc(100vw / 11) - 2px);
-      @include responsive(ipadpro) {
-        width: calc(calc(100vw / 9) - 2px);
-        height: calc(calc(100vw / 9) - 2px);
-      }
       @include responsive(tablet) {
         width: calc(calc(100vw / 7) - 2px);
         height: calc(calc(100vw / 7) - 2px);
@@ -264,7 +323,7 @@ span.icon-text-box {
         width: calc(calc(100vw / 5) - 2px);
         height: calc(calc(100vw / 5) - 2px);
       }
-      border: solid 1px #ffffff;
+
       img {
         height: 100%;
         width: 100%;
@@ -298,6 +357,10 @@ span.icon-text-box {
       a {
         color: $text_dark;
         text-decoration: none;
+
+        &:hover {
+          color: $primary;
+        }
       }
       a.active {
         color: $primary;
@@ -327,6 +390,7 @@ span.icon-text-box {
   z-index: 199;
   transition: 0.2s ease-in-out;
 }
+
 .sidenav {
   background-color: #000;
   display: flex;
@@ -341,10 +405,12 @@ span.icon-text-box {
   transition: 0.5s;
   width: 100vw;
   z-index: 200;
+
   .sidenav-body {
-    padding: 0 0 80px 80px;
+    padding: 0 0 60px 60px;
     img.logo-menu {
       height: 50px;
+      margin-bottom: 30px;
     }
     ul {
       display: block;
@@ -352,11 +418,10 @@ span.icon-text-box {
       padding: 0;
       margin: 0;
       li {
-        line-height: 2rem;
-        font-size: 0.8125rem;
+        line-height: 2.5rem;
+        font-size: 1rem;
         color: hsla(0,0%,100%,.8);
         letter-spacing: .3294px;
-        font-weight: lighter;
         transition: all .17s ease-in;
         cursor: pointer;
         a {
@@ -369,18 +434,18 @@ span.icon-text-box {
       }
     }
   }
-}
 
-a.close-button {
-  position: absolute;
-  top: -80px;
-  margin-top: 50px;
-  right: 10px;
-  padding: 0 0 20px 20px;
-  img {
-    height: 30px;
+  a.close-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 0 0 20px 20px;
+
+    img {
+      height: 40px;
+    }
   }
-}
+} // .sidenav
 
 .mobile-menu-container {
   display: none;
@@ -414,8 +479,10 @@ a.close-button {
   }
 
   .mobile-spy-right {
-    @include responsive(tablet) {
-
+    .primary-button {
+      @include responsive(mobile) {
+        padding: 0.4rem 1.3rem;
+      }
     }
   }
 }
@@ -447,11 +514,13 @@ ul.token-economy {
   tr {
     th, td {
       vertical-align: middle;
+      line-height: 1.3;
     }
 
     th {
       color: #fff;
       font-weight: 300;
+      min-width: 4.5rem;
     }
 
     td.center {
@@ -499,7 +568,8 @@ ul.token-economy {
       justify-content: flex-start;
       align-items: center;
       margin-bottom: 10px;
-      @include responsive(tablet) {
+
+      @include responsive(mobile) {
         width: 100%;
       }
       .profile-avatar  {
@@ -515,10 +585,10 @@ ul.token-economy {
         }
         .profile-role {
           margin: 0.1875rem;
-          font-size: 0.8em;
+          font-size: 0.85em;
         }
+
         a {
-          text-decoration: none;
           .profile-steemit {
             margin: 0.1875rem;
           }
@@ -529,7 +599,7 @@ ul.token-economy {
 
   .team-delegators {
     overflow: hidden;
-    max-height: 17rem;
+    max-height: 17.5rem;
 
     &.unfold {
       max-height: none;
@@ -537,7 +607,7 @@ ul.token-economy {
   }
 
   button.center {
-    margin: 2rem auto;
+    margin: 4rem auto 0 auto;
   }
 } // .team-section
 
@@ -553,13 +623,13 @@ ul.token-economy {
     flex-direction: column;
   }
   .footer-left {
-    padding: 50px 20px;
+    padding: 3em 2rem;
     display: flex;
     width: 50%;
-    @include responsive(tablet) {
+    @include responsive(mobile) {
       flex-direction: column;
       margin: 0px;
-      padding: 20px;
+      padding: 40px;
       width: auto;
     }
     .footer-box {
@@ -568,7 +638,6 @@ ul.token-economy {
       @include responsive(tablet) {
         width: 100%;
         margin-right: 0%;
-        margin-bottom: 20px;
       }
       .small-title {
         display: block;

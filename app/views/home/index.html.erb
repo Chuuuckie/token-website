@@ -20,7 +20,7 @@
 </div>
 
 <div class="main-container">
-  <div class="mobile-hide">
+  <div class="tablet-hide">
     <div class="spy-left">
       <%= render partial: 'home/menu_links' %>
     </div>
@@ -28,7 +28,7 @@
       <a href="https://steemhunt.com" target="_blank" class="primary-button"><%= t('terms.live_product') %></a>
     </div>
   </div>
-  <div class="mobile-only">
+  <div class="tablet-only">
     <%= render partial: 'home/side_nav' %>
   </div>
 
@@ -45,14 +45,14 @@
     <div class="main-col-text">
       <h1 class="primary-color"><%= t('platform.title') %></h1>
       <p class="grey-color"><%= t('platform.content') %></p>
-      <a href="#" class="more-link">Learn more <%= image_tag('icon-arrow-right.svg', class: 'svg-icon-p') %></a>
+      <a href="https://steemit.com/steemit/@steemhunt/announcing-hunt-token-airdrops-for-steemians-smart-media-token-project" target="_blank" class="more-link">Learn more <%= image_tag('icon-arrow-right.svg', class: 'svg-icon-p') %></a>
     </div>
     <div class="main-col-image">
       <%= image_tag 'img_building_token@2x.png' %>
     </div>
   </div>
 
-  <div class="main-row flex-row section" id="portfolio">
+  <div class="main-row flex-row section reverse" id="portfolio">
     <div class="main-col-image">
       <%= image_tag 'img-hunt-economy@2x.png' %>
     </div>
@@ -83,21 +83,24 @@
       <span class="white-color bold"><%= number_with_delimiter @stats[:count] %> products, <%= number_to_currency @stats[:value] %> rewards</span>
     </p>
     <a href="https://steemhunt.com" target="_blank" class="more-link">See the live product <%= image_tag('icon-arrow-right.svg', class: "svg-icon-p") %></a>
-    <%= image_tag('img_sh_mockup@2x.png', class: 'full-width sh-mockup') %>
+    <%= image_tag('img_sh_mockup@2x.png', class: 'full-width sh-mockup mobile-hide') %>
+    <%= image_tag('m_img_sh_mockup@2x.png', class: 'full-width sh-mockup mobile-only') %>
   </div>
 
   <div class="main-row section" id="reviewhunt">
     <h2 class="primary-color section-title">Reviewhunt</h2>
     <h1 class="white-color section-subtitle"><%= t('reviewhunt.sub_title') %></h1>
     <p class="grey-color"><%= t('reviewhunt.content') %></p>
-    <%= image_tag('reviewhunt@2x.png', class: 'full-width reviewhunt') %>
+    <%= image_tag('reviewhunt@2x.png', class: 'full-width reviewhunt mobile-hide') %>
+    <%= image_tag('m_reviewhunt@2x.png', class: 'full-width reviewhunt mobile-only') %>
   </div>
 
   <div class="main-row section" id="ideahunt">
     <h2 class="primary-color section-title">Ideahunt</h2>
     <h1 class="white-color section-subtitle"><%= t('ideahunt.sub_title') %></h1>
     <p class="grey-color"><%= t('ideahunt.content') %></p>
-    <%= image_tag('ideahunt@2x.png', class: 'full-width ideahunt') %>
+    <%= image_tag('ideahunt@2x.png', class: 'full-width ideahunt mobile-hide') %>
+    <%= image_tag('m_ideahunt@2x.png', class: 'full-width ideahunt mobile-only') %>
   </div>
 
   <div class="main-row section" id="token-economy">
@@ -203,11 +206,11 @@
     <div class="team-container">
       <%= render partial: 'home/person', collection: @influencers, cached: true %>
     </div>
-    <p class="category-title grey-color">Steem Power Sponsers (<%= @delegators.size %>)</p>
+    <p class="category-title grey-color">Steem Power Sponsers (<%= @delegators.size %>) -  <b class="white-color bold"><%= number_to_currency @total_funded %></b> delegated</p>
     <div class="team-container team-delegators">
       <%= render partial: 'home/person', collection: @delegators, cached: true %>
     </div>
 
-    <button class="primary-button center" id="expandDelegators">See all <%= (@delegators.size - 9) %> sponsors with <%= number_to_currency @total_funded %> funded</button>
+    <button class="primary-button center" id="expandDelegators">See all <%= (@delegators.size - 9) %> sponsors with <%= number_to_currency @total_funded %> delegated</button>
   </div>
 </div>

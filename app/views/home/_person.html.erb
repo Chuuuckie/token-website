@@ -1,13 +1,11 @@
 <% profile_picture = person[:no_thumbnail] ? image_path('img_plc@2x.png') : "https://img.busy.org/@#{person[:steemit]}?s=120" %>
 
 <div class="person-container">
-  <%= image_tag(profile_picture, class: 'profile-avatar', onerror: "this.error=null;this.src='#{image_path('img_plc@2x.png')}'") %>
-  <div class="person-info-container">
-      <% if person[:steemit] %>
-        <a href="https://steemhunt.com/author/@<%= person[:steemit] %>" target="_blank">
-          <span class="primary-color profile-name"><%= person[:name] %></span>
-        </a>
-      <% end %> <br>
-    <span class="grey-color profile-role"><%= person[:role] %></span> <br>
-  </div>
+  <a href="https://steemhunt.com/author/@<%= person[:steemit] %>" target="_blank">
+    <%= image_tag(profile_picture, class: 'profile-avatar', onerror: "this.error=null;this.src='#{image_path('img_plc@2x.png')}'") %>
+  </a>
+  <a href="https://steemhunt.com/author/@<%= person[:steemit] %>" target="_blank" class="person-info-container">
+    <span class="primary-color profile-name"><%= person[:name] %></span><br/>
+    <span class="grey-color profile-role"><%= person[:role] %></span>
+  </a>
 </div>

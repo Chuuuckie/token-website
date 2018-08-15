@@ -9,9 +9,9 @@
   });
 
   $(document).ready(function() {
-    $('li.spy-button').click(function() {
+    $('li.spy-button').click(function(e) {
       const target = $(this).children('a').data('target');
-      closeNav();
+      closeNav(e);
       $([document.documentElement, document.body]).animate({ scrollTop: $('#' + target).offset().top + 10 }, 300);
     });
 
@@ -21,8 +21,8 @@
     });
 
     $('#openNav').click(function() { openNav() });
-    $('#closeNav').click(function() { closeNav() });
-    $('#sidenavBack').click(function() { closeNav() });
+    $('#closeNav').click(closeNav);
+    $('#sidenavBack').click(closeNav);
     $('#expandDelegators').click(function() {
       $('.team-delegators').addClass('unfold');
       $(this).hide();
@@ -33,7 +33,8 @@
       $('#mySidenav').css('marginLeft', '100vw');
     }
 
-    function closeNav() {
+    function closeNav(e) {
+      e.stopPropagation();
       $('#sidenavBack').hide().css('backgroundColor', 'rgba(0, 0, 0, 0)');
       $('#mySidenav').css('marginLeft', '0');
     }

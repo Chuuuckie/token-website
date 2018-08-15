@@ -5,10 +5,10 @@
   @else if $media == mobile {
     @media only screen and (max-width: 550px) { @content; }
   }
-  @else if $media == tablet { // 1 column
-    @media only screen and (max-width: 1023px) { @content; }
+  @else if $media == tablet { // wide mode
+    @media only screen and (max-width: 1024px) { @content; }
   }
-  @else if $media == ipadpro { // 2 columns
+  @else if $media == ipadpro { // wide mode
     @media only screen and (max-width: 1400px) { @content; }
   }
   @else {
