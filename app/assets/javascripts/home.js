@@ -10,8 +10,13 @@
 
   $(document).ready(function() {
     $('li.spy-button').click(function() {
-      var target = $(this).children('a').attr('data-target');
+      const target = $(this).children('a').data('target');
       closeNav();
+      $([document.documentElement, document.body]).animate({ scrollTop: $('#' + target).offset().top + 10 }, 300);
+    });
+
+    $('.section-link').click(function() {
+      const target = $(this).data('target');
       $([document.documentElement, document.body]).animate({ scrollTop: $('#' + target).offset().top + 10 }, 300);
     });
 

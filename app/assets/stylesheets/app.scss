@@ -21,6 +21,8 @@ a.primary-button, button.primary-button {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  outline: none;
+  user-select: none;
 
   @include responsive(tablet) {
     width: 80px;
