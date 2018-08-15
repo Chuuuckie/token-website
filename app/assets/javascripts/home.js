@@ -44,7 +44,7 @@
     var vh = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
     var amplitude = 15;
 
-    $(document).mousemove(function(e) {
+    $('#landing').mousemove(function(e) {
       var mx = e.pageX;
       var my = e.pageY;
       if ((mx <= vw) && (my <= vh * 3)) {
