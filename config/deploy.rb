@@ -71,16 +71,4 @@ namespace :dotenv do
   end
 end
 
-namespace :assets do
-  desc "Upload compiled assets"
-  task :upload do
-    on roles :web do
-      stage = fetch(:rails_env) || fetch(:stage)
-      upload! "public", "#{release_path}", recursive: true
-      execute :rm, "-f #{release_path}/public/.DS_Store"
-    end
-  end
-end
-
 after 'deploy:symlink:shared', 'dotenv:symlink'
-after 'deploy:symlink:shared', 'assets:upload'
