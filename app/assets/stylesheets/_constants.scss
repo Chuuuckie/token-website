@@ -23,6 +23,10 @@ html, body {
   @include responsive(mobile) {
     font-size: 13px;
   }
+
+  @include responsive(tiny) {
+    font-size: 12px;
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {

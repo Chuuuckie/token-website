@@ -12,7 +12,7 @@ hr.grey-divider {
 a.primary-button, button.primary-button {
   padding: 0.8em 2.2em;
   border-radius: 50vh;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: $primary;
   border: solid 1px $primary;
   background: transparent;
@@ -249,7 +249,7 @@ span.icon-text-box {
         width: 60vw;
       }
       @include responsive(mobile) {
-        width: 80vw;
+        width: 90vw;
       }
       img.logo-top {
         width: 4.8rem;
@@ -268,14 +268,13 @@ span.icon-text-box {
       }
       h1.contents-title {
         line-height: 1.5;
-        letter-spacing: 1.2px;
         text-align: center;
         color: #4a4a4a;
         margin: 5rem 0 0 0;
         font-weight: 700;
 
         @include responsive(mobile) {
-          font-size: 1.8rem;
+          font-size: 2rem;
           margin: 4rem 0 0 0;
         }
       }
