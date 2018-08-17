@@ -31,8 +31,5 @@ Thumbs.db
 # dotenv-rails
 .env*
 
-# Pre-subscription
-public/*
-
 config/master.key
 storage/*
