@@ -19,15 +19,15 @@ en:
     content: "Steemhunt is a community for geeks, alpha nerds, and product enthusiasts who love to dig out new products and talk about them with others. We call them “Product Hunters.” To keep them motivated and maintain the community as an ad-free playground, we adopted Steem blockchain to reward them with cryptocurrency for their dedicated activities."
     content_2: "Hunted products & USD rewards (approx.) paid since March 2018:"
   reviewhunt:
-    sub_title: "Post Bounties for Product Influencers to Unleash Launching Hype"
-    content: "Makers/companies spend an enormous amount of time/efforts to raise attention from early adopters because their word of mouth impact is exceptionally high. With Reviewhunt, it’s never been easier for makers to attract early-adopters by posting bounties to boost their early-stage product cycle."
+    sub_title: "Review Campaign for Product Influencers to Unleash Launching Hype"
+    content: "Makers/companies spend an enormous amount of time/efforts to raise attention from early adopters because their word of mouth impact is exceptionally high. With Reviewhunt, it’s never been easier for makers to attract early-adopters by offering newly launched products with large discounts or bounties in return for quality reviews that will boost up their launching buzz."
   ideahunt:
     sub_title: "Powerful Product Geeks Now in Crowdfunding Market"
     content: "The biggest problem for makers when crowdfunding is that it is very difficult to target the right people. Many makers on crowdfunding platforms need to heavily advertise their products on other media channels too. Ideahunt, backed by the product enthusiasts from Steemhunt, can provide a hassle-free and perfectly target-centered crowdfunding platform. The hunters will constantly look for innovative products to purchase with their HUNT tokens earned from Steemhunt/Reviewhunt. This means that makers will be free from advertising pressures."
   token_economy:
     sub_title: "Tokens that Create an Interchaneable Ecosystem between Makers and Early-adopters"
     content: "Hunters earn HUNT tokens by sharing/upvoting cool new products on Steemhunt community. Makers can also be hunters by sharing their own products."
-    content_2: "Makers buy HUNT tokens and post bounties for hunters in Reviewhunt to promote their product launch such as app downloads, reviews, or social media activities. Hunters can earn HUNT tokens from makers."
+    content_2: "Makers buy HUNT tokens to post bounties or sell products with discounted prices in Reviewhunt in return for quality reviews. Hunters can use HUNT tokens to purchase products or earn tokens from makers."
     content_3: "Makers run crowdfunding campaigns in Ideahunt. Hunters can use their HUNT tokens to participate/purchase products."
   token_distribution:
     sub_title: "No Crowd Sale, 50% Airdrop
@@ -35,7 +35,7 @@ to Focus on Product/Community Building"
     content: "The most important KSF (Key Successful Factor) of the HUNT platform is to gather as many product influencers as possible and amplify our community activities, rather than raising funds via crowd sales. So, we don’t run any public token sales. Instead, 50% of the tokens are airdropped for our target users so that the HUNT platform can invite many product influencers."
   whitepaper:
     sub_title: "We DON’T have time to Create
-99% fiction paper."
+99% fictional paper."
     content: "Creating an eye-catching and highly detailed whitepaper becomes one of the most important parts for many blockchain projects. As well as platform coins, many decentralised applications are writing gazilion-page-long whitepapers - most of the contents are fiction and nobody bothers to finish reading it.
 HUNT platform is simple to understand, it’s a Steem dApp so there’s no need to explain the blockchain technology. Also, this is a community-oriented project, so the value of the token is highly linked to the community value. Thus, we have no reasons to create a complicated fiction paper, instead we should focus on building this community platform."
   team:
