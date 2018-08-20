@@ -9,6 +9,10 @@ hr.grey-divider {
   margin: 0px;
 }
 
+a {
+  color: $primary;
+}
+
 a.primary-button, button.primary-button {
   padding: 0.8em 2.2em;
   border-radius: 50vh;
@@ -17,9 +21,6 @@ a.primary-button, button.primary-button {
   border: solid 1px $primary;
   background: transparent;
   text-decoration: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   cursor: pointer;
   outline: none;
   user-select: none;
