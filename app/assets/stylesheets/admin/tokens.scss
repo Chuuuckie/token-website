@@ -1,0 +1,13 @@
+.table {
+  td {
+    &.pending {
+      color: yellow;
+    }
+    &.running {
+      color: green;
+    }
+    &.error {
+      color: red;
+    }
+  }
+}

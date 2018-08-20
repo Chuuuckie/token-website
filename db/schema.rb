@@ -10,14 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_21_074657) do
+ActiveRecord::Schema.define(version: 2018_08_06_050139) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "erc_transactions", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.decimal "amount", null: false
+    t.string "tx_hash", limit: 66
+    t.string "status", default: "pending"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["status"], name: "index_erc_transactions_on_status"
+    t.index ["user_id"], name: "index_erc_transactions_on_user_id"
+  end
+
   create_table "hunt_transactions", force: :cascade do |t|
-    t.string "eth_address", limit: 42
-    t.string "eth_tx_hash", limit: 66
     t.decimal "amount", null: false
     t.string "memo"
     t.datetime "created_at", null: false
@@ -55,7 +64,6 @@ ActiveRecord::Schema.define(version: 2018_07_21_074657) do
     t.index ["created_at"], name: "index_posts_on_created_at"
     t.index ["is_active"], name: "index_posts_on_is_active"
     t.index ["listed_at"], name: "index_posts_on_listed_at"
-    t.index ["tags"], name: "index_posts_on_tags"
     t.index ["url"], name: "index_posts_on_url", unique: true
   end
 

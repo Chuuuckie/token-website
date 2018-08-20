@@ -1,0 +1,34 @@
+<h1>HUNT Transactions</h1>
+
+<div class="btn-group" role="group" aria-label="Status">
+  <button type="button" class="btn btn-primary">Pending</button>
+  <button type="button" class="btn btn-success">Sent</button>
+  <button type="button" class="btn btn-danger">Error</button>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Username</th>
+      <th>Amount</th>
+      <th>Status</th>
+      <th>Created</th>
+      <th>Updated</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @transactions.each do |t| %>
+      <tr>
+        <td><%= link_to "@#{t.user.username}", t.user.url, target: '_blank' %></td>
+        <td><%= t.amount %></td>
+        <td class="<%= t.status %>">
+          <%= t.tx_hash.blank? ? t.status : link_to(t.status, t.url, target: '_blank') %>
+        </td>
+        <td><%= time_ago_in_words t.created_at %></td>
+        <td><%= time_ago_in_words t.updated_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= will_paginate @transactions, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>

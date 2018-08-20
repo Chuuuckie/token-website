@@ -18,6 +18,9 @@ gem 'uglifier', '>= 1.3.0'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'jquery-rails'
 
+gem 'will_paginate'
+gem 'will_paginate-bootstrap4'
+
 gem 'dotenv-rails'
 
 group :development do
