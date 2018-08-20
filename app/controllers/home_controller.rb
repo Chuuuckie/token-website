@@ -9,7 +9,7 @@ class HomeController < ApplicationController
   ]
   MODERATOR_ACCOUNTS = [
     'teamhumble', 'urbangladiator', 'chronocrypto', 'dayleeo', 'fknmayhem', 'jayplayco', 'bitrocker2020', 'joannewong',
-    'geekgirl', 'playitforward'
+    'geekgirl', 'playitforward', 'monajam'
   ].map {|person| { name: person, role: "Moderator", steemit: person} }
   INFLUENCER_ACCOUNTS = [
     'dontstopmenow', 'sambillingham', 'ogochukwu', 'theversatileguy', 'guyfawkes4-20', 'pialejoana', 'tobias-g', 'superoo7',
