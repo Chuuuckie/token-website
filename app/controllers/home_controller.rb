@@ -9,11 +9,11 @@ class HomeController < ApplicationController
   ]
   MODERATOR_ACCOUNTS = [
     'teamhumble', 'urbangladiator', 'chronocrypto', 'dayleeo', 'fknmayhem', 'jayplayco', 'bitrocker2020', 'joannewong',
-    'geekgirl', 'playitforward', 'monajam'
+    'geekgirl', 'playitforward'
   ].map {|person| { name: person, role: "Moderator", steemit: person} }
   INFLUENCER_ACCOUNTS = [
     'dontstopmenow', 'sambillingham', 'ogochukwu', 'theversatileguy', 'guyfawkes4-20', 'pialejoana', 'tobias-g', 'superoo7',
-    'themanualbot', 'redtravels', 'elleok', 'joythewanderer', 'ady-was-here', 'raulmz', 'chuuuckie', 'shaphir', 'mobi72'
+    'themanualbot', 'redtravels', 'elleok', 'joythewanderer', 'ady-was-here', 'raulmz', 'chuuuckie', 'shaphir', 'mobi72', 'monajam'
   ].map {|person| { name: person, role: "Influencer", steemit: person} }
 
   THUMBNAIL_EXCLUSION = [
