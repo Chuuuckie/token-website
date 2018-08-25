@@ -1,10 +1,19 @@
 <h1>HUNT Transactions</h1>
 
-<div class="btn-group" role="group" aria-label="Status">
-  <button type="button" class="btn btn-primary">Pending</button>
-  <button type="button" class="btn btn-success">Sent</button>
-  <button type="button" class="btn btn-danger">Error</button>
-</div>
+<ul class="nav justify-content-end">
+  <li class="nav-item">
+    <%= link_to "Pending (#{@count['pending'] || 0})", admin_tokens_path(status: 'pending'), class: 'nav-link active' %>
+  </li>
+  <li class="nav-item">
+    <%= link_to "Running (#{@count['running'] || 0})", admin_tokens_path(status: 'running'), class: 'nav-link' %>
+  </li>
+  <li class="nav-item">
+    <%= link_to "Sent (#{@count['sent'] || 0})", admin_tokens_path(status: 'sent'), class: 'nav-link' %>
+  </li>
+  <li class="nav-item">
+    <%= link_to "Error (#{@count['error'] || 0})", admin_tokens_path(status: 'error'), class: 'nav-link' %>
+  </li>
+</ul>
 
 <table class="table">
   <thead>

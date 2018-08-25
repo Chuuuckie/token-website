@@ -1,13 +1,16 @@
 .table {
   td {
     &.pending {
-      color: yellow;
+      color: #ffc107;
     }
     &.running {
-      color: green;
+      color: #28a745;
     }
     &.error {
-      color: red;
+      color: #dc3545;
     }
   }
+}
+.pagination {
+  justify-content: center;
 }
