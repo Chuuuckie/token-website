@@ -8,7 +8,7 @@ class HomeController < ApplicationController
     { name: "Astro Lee", role: "Developer", steemit: "astrocket" }
   ]
   MODERATOR_ACCOUNTS = [
-    'teamhumble', 'urbangladiator', 'chronocrypto', 'dayleeo', 'fknmayhem', 'jayplayco', 'bitrocker2020', 'joannewong',
+    'teamhumble', 'urbangladiator', 'dayleeo', 'fknmayhem', 'jayplayco', 'bitrocker2020', 'joannewong',
     'geekgirl', 'playitforward'
   ].map {|person| { name: person, role: "Moderator", steemit: person} }
   INFLUENCER_ACCOUNTS = [
