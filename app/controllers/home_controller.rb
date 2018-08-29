@@ -35,7 +35,7 @@ class HomeController < ApplicationController
     @moderators = MODERATOR_ACCOUNTS
     @influencers = INFLUENCER_ACCOUNTS
     @total_funded = 0
-    @delegators = JSON.parse(File.read('delegators.json')).map { |del|
+    @delegators = JSON.parse(File.read('db/delegators.json')).map { |del|
       sp_worth = (del["sp"] * steem_price).round(2)
       @total_funded += sp_worth
 
