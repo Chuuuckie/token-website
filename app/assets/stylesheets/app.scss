@@ -499,6 +499,41 @@ ul.token-economy {
   }
 }
 
+table.token-distribution {
+  width: 75%;
+  border-collapse: collapse;
+
+  @include responsive(tablet) {
+    width: 100%;
+  }
+
+  td {
+    font-size: 0.785em;
+    padding: 0.5rem;
+    color: #fff;
+
+    &.airdrops {
+      width: 50%;
+      background-color: $primary;
+    }
+
+    &.private-sales {
+      width: 20%;
+      background-color: #9b9b9b;
+    }
+
+    &.company-holding {
+      width: 30%;
+      background-color: #4a4a4a;
+    }
+  }
+}
+
+.checkout-airdrop {
+  margin-top: 1.5rem;
+  margin-bottom: 4rem;
+}
+
 .roadmap-table {
   color: #9b9b9b;
   border-collapse: collapse;

@@ -128,8 +128,17 @@
     <h2 class="primary-color section-title">Token Distribution</h2>
     <h1 class="white-color section-subtitle"><%= t('token_distribution.sub_title') %></h1>
     <p class="grey-color"><%= t('token_distribution.content') %></p>
-    <%= image_tag('img_token_distribution@2x.png', class: 'full-width mobile-hide') %>
-    <%= image_tag('m_img_token_distribution@2x.png', class: 'full-width mobile-only') %>
+
+    <table class="token-distribution">
+      <tr>
+        <td class="airdrops">Airdrops (250M)</td>
+        <td class="private-sales">Private Sales (100M)</td>
+        <td class="company-holding">Company Holding (150M)</td>
+      </tr>
+    </table>
+    <div class="checkout-airdrop">
+      <a href="https://steemhunt.com/airdrop" target="_blank" class="more-link">Check out the details of HUNT token airdrops <%= image_tag('icon-arrow-right.svg', class: 'svg-icon-p') %></a>
+    </div>
 
     <h1 class="white-color section-subtitle">Private Token Sales are Live</h1>
     <p class="grey-color">20% of the initially issued HUNT tokens are selling for the investors who are looking for REAL blockchain-based services that are actively boosting the REAL user base via private token sales. Please contact us via email if you are interested in participating in our private sale: <a href="mailto:steemhunt@gmail.com">steemhunt@gmail.com</a>. We will send you a concise and easy-to-read pitch deck.</p>
