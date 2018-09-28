@@ -1,4 +1,8 @@
-## Steemhunt Token Webstie
+# Steemhunt Token Webstie
+
+Steemhunt is a Steem blockchain powered ranking community for geeks, alpha nerds, and product enthusiasts who love to dig out new products and talk about them with others.
+
+## Stacks
 
 ```bash
 git clone git@github.com:Steemhunt/token-website.git
@@ -7,5 +11,3 @@ bundle install
 rails db:create db:migrate
 rails s
 ```
-
-browse => localhost:3000
