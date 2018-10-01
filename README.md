@@ -1,4 +1,4 @@
-# Steemhunt Token Webstie
+# Steemhunt Token Website
 
 Steemhunt is a Steem blockchain powered ranking community for geeks, alpha nerds, and product enthusiasts who love to dig out new products and talk about them with others.
 
