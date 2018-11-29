@@ -14,7 +14,7 @@ class HomeController < ApplicationController
   INFLUENCER_ACCOUNTS = [
     'camzy', 'ikrahch', 'aamirijaz', 'azwarrangkuti', 'abasifreke', 'sanach', 'rodus', 'gentleshaid', 'tio',
     'xabi', 'giovaabbatichio', 'abdulmanan', 'sweetguy', 'mittymartz', 'wajahatsardar', 'faizan-ashraf',
-    'iqbaladan', 'yasayanoluler', 'shrazi', 'vinzie1'
+    'iqbaladan', 'shrazi', 'vinzie1'
   ].map {|person| { name: person, role: "Influencer", steemit: person} }
 
   THUMBNAIL_EXCLUSION = [
