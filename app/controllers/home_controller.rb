@@ -12,9 +12,9 @@ class HomeController < ApplicationController
     'geekgirl', 'playitforward', 'monajam', 'pialejoana'
   ].map {|person| { name: person, role: "Moderator", steemit: person} }
   INFLUENCER_ACCOUNTS = [
-    'camzy', 'ikrahch', 'aamirijaz', 'azwarrangkuti', 'abasifreke', 'sanach', 'rodus', 'gentleshaid', 'tio',
-    'xabi', 'giovaabbatichio', 'abdulmanan', 'sweetguy', 'mittymartz', 'wajahatsardar', 'faizan-ashraf',
-    'iqbaladan', 'shrazi', 'vinzie1'
+    'sanach', 'azwarrangkuti', 'xabi', 'vinzie1', 'giovaabbatichio', 'iqbaladan', 'mittymartz', 'calprut', 'josalarcon2',
+    'karamyog', 'amar15', 'alikoc07', 'chuuuckie', 'rabeel', 'zohaib', 'blessedman939',
+    'gungunkrishu', 'shrazi', 'vinzie1'
   ].map {|person| { name: person, role: "Influencer", steemit: person} }
 
   THUMBNAIL_EXCLUSION = [
